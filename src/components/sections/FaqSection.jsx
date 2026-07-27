@@ -5,8 +5,8 @@ import './FaqSection.css';
 const FAQS_DATA = [
   {
     id: 1,
-    question: "Do you travel outside Australia?",
-    answer: "Yes! While we are based in Sydney, Australia, our team frequently travels internationally for destination weddings, royal ceremonies, and corporate visual productions worldwide."
+    question: "Do you travel outside Townsville?",
+    answer: "Yes! While we are based in Townsville, QLD, our team frequently travels outside Townsville for destination weddings, royal ceremonies, and corporate visual productions worldwide."
   },
   {
     id: 2,
