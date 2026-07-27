@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Clock, MapPin, SlidersHorizontal, CheckCircle2, Send, MessageSquare } from 'lucide-react';
+import { Clock, MapPin, SlidersHorizontal, CheckCircle2, Send, MessageSquare, FileText } from 'lucide-react';
+import ReceiptModal from '../ReceiptModal';
 import './BookingSection.css';
 
 export default function BookingSection({ customPackageSummary }) {
   const [submitted, setSubmitted] = useState(false);
+  const [showReceipt, setShowReceipt] = useState(false);
+  const [receiptData, setReceiptData] = useState(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     service: 'Photography',
     date: '',
-    location: '',
+    location: 'Townsville, QLD',
     message: ''
   });
 
@@ -23,7 +27,7 @@ Duration: ${customPackageSummary.duration}
 Crew Size: ${customPackageSummary.crew}
 Photo Deliverables: ${customPackageSummary.photoDeliverables}
 Video Deliverables: ${customPackageSummary.videoEdits}
-Add-ons & Deliverables: ${customPackageSummary.addOns}`;
+Add-ons: ${customPackageSummary.addOns}`;
 
       setFormData((prev) => ({
         ...prev,
@@ -40,6 +44,27 @@ Add-ons & Deliverables: ${customPackageSummary.addOns}`;
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
+    const generatedReceipt = {
+      receiptId: `PIC-${Math.floor(100000 + Math.random() * 900000)}`,
+      date: new Date().toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' }),
+      clientName: formData.name || 'Valued Client',
+      clientPhone: formData.phone || '+61 455 974 240',
+      clientEmail: formData.email,
+      eventDate: formData.date || 'To Be Scheduled',
+      eventLocation: formData.location || 'Townsville, QLD',
+      packageTitle: customPackageSummary?.tier || formData.service || 'Gold Package',
+      duration: customPackageSummary?.duration || '4-6 Hours',
+      crewText: customPackageSummary?.crew || '1 Photographer + 1 Videographer',
+      photoCount: customPackageSummary?.photoDeliverables || '60 Retouched Photos',
+      highlightFormat: customPackageSummary?.videoEdits || 'Horizontal (16:9 Cinema)',
+      addons: customPackageSummary?.addOns ? [customPackageSummary.addOns] : [],
+      totalPrice: customPackageSummary?.tier === 'Diamond' ? '$3,200 AUD' : '$1,850 AUD',
+      notes: formData.message
+    };
+
+    setReceiptData(generatedReceipt);
+    setShowReceipt(true);
   };
 
   const handleSendWhatsAppNotification = () => {
@@ -108,7 +133,12 @@ Add-ons & Deliverables: ${customPackageSummary.addOns}`;
                 <p>Thank you, <strong>{formData.name || 'friend'}</strong>. Our production team has received your quote request and sent a confirmation alert.</p>
 
                 <div className="notification-action-box">
-                  <span className="notif-label">Instant Notification Dispatch Options:</span>
+                  <span className="notif-label">Digital Receipt & Notification Options:</span>
+                  <button type="button" onClick={() => setShowReceipt(true)} className="whatsapp-alert-btn" style={{ background: 'rgba(255, 85, 0, 0.2)', border: '1px solid #FF5500', color: '#FFFFFF' }}>
+                    <FileText size={18} />
+                    <span>View Classic Digital Receipt</span>
+                  </button>
+
                   <button type="button" onClick={handleSendWhatsAppNotification} className="whatsapp-alert-btn">
                     <MessageSquare size={18} />
                     <span>Send Copy to WhatsApp Instant Alert</span>
@@ -185,7 +215,7 @@ Add-ons & Deliverables: ${customPackageSummary.addOns}`;
                     <input
                       type="text"
                       name="location"
-                      placeholder="Brisbane, QLD"
+                      placeholder="Townsville, QLD"
                       value={formData.location}
                       onChange={handleChange}
                     />
@@ -205,13 +235,17 @@ Add-ons & Deliverables: ${customPackageSummary.addOns}`;
 
                 <button type="submit" className="request-quote-submit-btn">
                   <Send size={16} />
-                  <span>SUBMIT BESPOKE QUOTE REQUEST</span>
+                  <span>GENERATE CLASSIC RECEIPT & BOOK</span>
                 </button>
               </>
             )}
           </form>
         </div>
       </div>
+
+      {showReceipt && receiptData && (
+        <ReceiptModal bookingData={receiptData} onClose={() => setShowReceipt(false)} />
+      )}
     </section>
   );
 }
