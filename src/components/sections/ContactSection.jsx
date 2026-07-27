@@ -65,97 +65,48 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right Column: Geographically Accurate Australia Vector Map */}
+        {/* Right Column: Exact Australia Vector Map */}
         <div className="contact-map-col">
           <div className="australia-map-card">
-            <svg viewBox="0 0 780 520" className="australia-map-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Detailed Australia Coastline Path (Matched to Reference Image) */}
-              <path
-                d="M 548,72
-                   C 554,82 546,95 548,110
-                   C 552,122 562,132 572,148
-                   C 582,162 602,175 615,198
-                   C 628,222 642,250 644,282
-                   C 646,312 638,342 622,366
-                   C 606,390 584,410 562,420
-                   C 550,425 535,420 524,412
-                   C 515,425 508,438 498,442
-                   C 490,445 480,432 475,418
-                   C 470,402 462,392 450,380
-                   C 432,368 408,362 382,362
-                   C 356,362 332,374 310,382
-                   C 288,390 264,402 240,410
-                   C 216,416 190,422 168,420
-                   C 148,418 132,408 128,388
-                   C 124,368 132,352 135,335
-                   C 138,318 132,302 120,290
-                   C 108,278 95,268 98,248
-                   C 100,228 116,212 130,200
-                   C 145,188 162,180 180,172
-                   C 200,164 220,158 240,152
-                   C 255,148 268,136 272,122
-                   C 276,108 265,98 278,92
-                   C 292,86 308,98 322,96
-                   C 338,94 348,82 360,76
-                   C 375,70 392,68 405,78
-                   C 418,88 432,84 445,86
-                   C 460,88 472,112 490,120
-                   C 508,126 525,120 538,105
-                   C 542,92 544,80 548,72 Z"
-                fill="url(#map-grad)"
-                stroke="rgba(255, 85, 0, 0.85)"
-                strokeWidth="2.5"
-                strokeLinejoin="round"
+            <div className="exact-map-container">
+              <img
+                src="./australia-outline.png"
+                alt="Australia Map Outline"
+                className="australia-exact-outline-img"
               />
+              <svg viewBox="0 0 780 520" className="australia-overlay-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* State Boundaries (Dashed Lines) */}
+                <line x1="260" y1="110" x2="260" y2="400" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+                <line x1="260" y1="250" x2="480" y2="250" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+                <line x1="430" y1="100" x2="430" y2="250" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+                <line x1="430" y1="310" x2="650" y2="275" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
 
-              {/* Tasmania Island */}
-              <path
-                d="M 548,445 C 565,442 582,448 588,460 C 585,478 570,490 550,488 C 538,478 535,460 548,445 Z"
-                fill="url(#map-grad)"
-                stroke="rgba(255, 85, 0, 0.85)"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
+                {/* Major Cities */}
+                <circle cx="115" cy="385" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+                <text x="92" y="405" fill="#A0A5B5" fontSize="10" fontWeight="700">Perth</text>
 
-              {/* State Boundaries (Dashed Lines) */}
-              <line x1="252" y1="100" x2="252" y2="402" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-              <line x1="252" y1="255" x2="475" y2="255" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-              <line x1="418" y1="94" x2="418" y2="255" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-              <line x1="418" y1="310" x2="650" y2="275" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+                <circle cx="340" cy="85" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+                <text x="320" y="70" fill="#A0A5B5" fontSize="10" fontWeight="700">Darwin</text>
 
-              {/* Major Cities */}
-              <circle cx="108" cy="402" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="85" y="420" fill="#A0A5B5" fontSize="10" fontWeight="700">Perth</text>
+                <circle cx="475" cy="415" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+                <text x="442" y="432" fill="#A0A5B5" fontSize="10" fontWeight="700">Adelaide</text>
 
-              <circle cx="340" cy="74" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="320" y="60" fill="#A0A5B5" fontSize="10" fontWeight="700">Darwin</text>
+                <circle cx="550" cy="435" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+                <text x="524" y="452" fill="#A0A5B5" fontSize="10" fontWeight="700">Melbourne</text>
 
-              <circle cx="475" cy="418" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="442" y="436" fill="#A0A5B5" fontSize="10" fontWeight="700">Adelaide</text>
+                <circle cx="638" cy="335" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+                <text x="648" y="340" fill="#A0A5B5" fontSize="10" fontWeight="700">Sydney</text>
 
-              <circle cx="548" cy="440" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="522" y="458" fill="#A0A5B5" fontSize="10" fontWeight="700">Melbourne</text>
-
-              <circle cx="634" cy="342" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="644" y="347" fill="#A0A5B5" fontSize="10" fontWeight="700">Sydney</text>
-
-              {/* PRIMARY HEADQUARTERS PIN: BRISBANE, QUEENSLAND */}
-              <g className="brisbane-pin-group" transform="translate(650, 246)">
-                <circle r="30" fill="rgba(255, 85, 0, 0.25)" className="pulse-ring-map" />
-                <circle r="15" fill="rgba(255, 85, 0, 0.45)" />
-                <circle r="8" fill="#FF5500" />
-                <circle r="3" fill="#FFFFFF" />
-                <text x="-165" y="-12" fill="#FF8800" fontSize="13" fontWeight="900" letterSpacing="1">BRISBANE, QUEENSLAND HQ</text>
-              </g>
-
-              {/* Gradient Defs */}
-              <defs>
-                <linearGradient id="map-grad" x1="80" y1="40" x2="700" y2="500" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#181B26"/>
-                  <stop offset="1" stopColor="#0B0E17"/>
-                </linearGradient>
-              </defs>
-            </svg>
+                {/* PRIMARY HEADQUARTERS PIN: BRISBANE, QUEENSLAND */}
+                <g className="brisbane-pin-group" transform="translate(642, 240)">
+                  <circle r="30" fill="rgba(255, 85, 0, 0.25)" className="pulse-ring-map" />
+                  <circle r="15" fill="rgba(255, 85, 0, 0.45)" />
+                  <circle r="8" fill="#FF5500" />
+                  <circle r="3" fill="#FFFFFF" />
+                  <text x="-165" y="-12" fill="#FF8800" fontSize="13" fontWeight="900" letterSpacing="1">BRISBANE, QUEENSLAND HQ</text>
+                </g>
+              </svg>
+            </div>
 
             {/* Brisbane, Queensland Badge */}
             <div className="map-location-badge">
