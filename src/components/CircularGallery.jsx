@@ -135,7 +135,7 @@ function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }) {
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif', textPosition = 'bottom' }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -143,6 +143,7 @@ class Title {
     this.text = text;
     this.textColor = textColor;
     this.font = font;
+    this.textPosition = textPosition;
     this.createMesh();
   }
   createMesh() {
@@ -178,7 +179,11 @@ class Title {
     const textHeight = this.plane.scale.y * 0.15;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    this.mesh.position.y = this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.05;
+    if (this.textPosition === 'top') {
+      this.mesh.position.y = this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.05;
+    } else {
+      this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+    }
     this.mesh.setParent(this.plane);
   }
 }
@@ -198,7 +203,8 @@ class Media {
     bend,
     textColor,
     borderRadius = 0,
-    font
+    font,
+    textPosition = 'bottom'
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -215,6 +221,7 @@ class Media {
     this.textColor = textColor;
     this.borderRadius = borderRadius;
     this.font = font;
+    this.textPosition = textPosition;
     this.createShader();
     this.createMesh();
     this.createTitle();
@@ -306,7 +313,8 @@ class Media {
       renderer: this.renderer,
       text: this.text,
       textColor: this.textColor,
-      font: this.font
+      font: this.font,
+      textPosition: this.textPosition
     });
   }
   update(scroll, direction) {
@@ -380,7 +388,8 @@ class App {
       scrollSpeed = 2,
       scrollEase = 0.05,
       autoPlay = true,
-      autoSpeed = 0.05
+      autoSpeed = 0.05,
+      textPosition = 'bottom'
     } = {}
   ) {
     document.documentElement.classList.remove('no-js');
@@ -395,7 +404,7 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-    this.createMedias(items, bend, textColor, borderRadius, font);
+    this.createMedias(items, bend, textColor, borderRadius, font, textPosition);
     this.update();
     this.addEventListeners();
   }
@@ -423,7 +432,7 @@ class App {
       widthSegments: 100
     });
   }
-  createMedias(items, bend = 1, textColor, borderRadius, font) {
+  createMedias(items, bend = 1, textColor, borderRadius, font, textPosition = 'bottom') {
     const defaultItems = [
       { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
       { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
@@ -448,7 +457,8 @@ class App {
         bend,
         textColor,
         borderRadius,
-        font
+        font,
+        textPosition
       });
     });
   }
@@ -585,7 +595,8 @@ export default function CircularGallery({
   scrollSpeed = 2,
   scrollEase = 0.05,
   autoPlay = true,
-  autoSpeed = 0.05
+  autoSpeed = 0.05,
+  textPosition = 'bottom'
 }) {
   const containerRef = useRef(null);
   useEffect(() => {
@@ -603,7 +614,8 @@ export default function CircularGallery({
         scrollSpeed,
         scrollEase,
         autoPlay,
-        autoSpeed
+        autoSpeed,
+        textPosition
       });
     });
 
@@ -611,7 +623,7 @@ export default function CircularGallery({
       isMounted = false;
       if (app) app.destroy();
     };
-  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase, autoPlay, autoSpeed]);
+  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase, autoPlay, autoSpeed, textPosition]);
   return (
     <div
       className="circular-gallery"

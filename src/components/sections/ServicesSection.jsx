@@ -43,6 +43,7 @@ export default function ServicesSection() {
           autoSpeed={0.04}
           fontUrl="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
           font="bold 26px Orbitron"
+          textPosition="top"
         />
       </div>
 
