@@ -113,7 +113,7 @@ export default function FooterSection() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
-          <p>© 2025 Pictura Creations. All Rights Reserved. Every Detail. Every Emotion.</p>
+          <p>© 2026 Pictura Creations. All Rights Reserved. Every Detail. Every Emotion.</p>
         </div>
       </div>
     </footer>

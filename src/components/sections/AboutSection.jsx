@@ -35,7 +35,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="about-description">
-            Pictura Creations is Townsville's premier creative media production studio, specializing in high-end photography, 4K videography, aerial drone cinema, and multi-camera live broadcasting. Established in 2020 in Townsville, Queensland, we combine cinematic artistry with cutting-edge technology to capture the authentic emotion, beauty, and energy of every moment across North Queensland.
+            Pictura Creations is Townsville's premier creative media production studio, specializing in photography, cinematography, aerial cinema, and multi-camera live broadcasting. Established in 2020 in Townsville, Queensland, we combine cinematic artistry with cutting-edge technology to capture the authentic emotion, beauty, and energy of every moment across North Queensland. And as our clients say "The best photography in Townsville.."
           </p>
         </div>
 
