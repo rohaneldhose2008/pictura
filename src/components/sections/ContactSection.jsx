@@ -1,16 +1,12 @@
-import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Layers, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import BusinessCard3D from '../BusinessCard3D';
-import Lanyard from '../Lanyard';
 import './ContactSection.css';
 
 export default function ContactSection() {
-  const [activeView, setActiveView] = useState('card');
-
   return (
     <section id="contact" className="contact-section section-container dissolve-section">
       <div className="contact-grid">
-        {/* Left Column: Details & Socials */}
+        {/* Left Column: Details */}
         <div className="contact-info-col">
           <div className="section-tag">GET IN TOUCH</div>
           <h2 className="section-title">
@@ -50,53 +46,11 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-
-          <div className="contact-socials">
-            <span className="socials-label">FOLLOW US</span>
-            <div className="social-icons-row">
-              <a href="https://www.facebook.com/share/14fduqyis1Y/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
-              <a href="https://www.instagram.com/pictura_aus?utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-              <a href="https://www.instagram.com/pictura_aus?utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="YouTube">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000000"/></svg>
-              </a>
-              <a href="https://www.instagram.com/pictura_aus?utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-            </div>
-          </div>
         </div>
 
-        {/* Right Column: 3D View Switcher (Flippable Card or 3D Physics Lanyard) */}
+        {/* Right Column: 3D Interactive Flippable Social Media Card */}
         <div className="contact-map-col">
-          <div className="view-mode-toggle-bar">
-            <button
-              type="button"
-              className={`view-mode-btn ${activeView === 'card' ? 'active' : ''}`}
-              onClick={() => setActiveView('card')}
-            >
-              <Layers size={14} />
-              <span>3D FLIPPABLE SOCIAL PASS</span>
-            </button>
-
-            <button
-              type="button"
-              className={`view-mode-btn ${activeView === 'lanyard' ? 'active' : ''}`}
-              onClick={() => setActiveView('lanyard')}
-            >
-              <Sparkles size={14} />
-              <span>3D PHYSICS LANYARD</span>
-            </button>
-          </div>
-
-          {activeView === 'card' ? (
-            <BusinessCard3D />
-          ) : (
-            <Lanyard position={[0, 0, 22]} gravity={[0, -40, 0]} frontImage="./pictura-flyer.jpg" backImage="./pictura-flyer.jpg" />
-          )}
+          <BusinessCard3D />
         </div>
       </div>
     </section>
