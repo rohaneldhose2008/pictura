@@ -1,6 +1,6 @@
 import './PicturaLogo.css';
 
-export default function PicturaLogo({ variant = 'horizontal', height = 40 }) {
+export default function PicturaLogo({ variant = 'horizontal', height = 38 }) {
   if (variant === 'full') {
     return (
       <div className="pictura-logo-wrap pictura-full-card-logo">
@@ -17,7 +17,7 @@ export default function PicturaLogo({ variant = 'horizontal', height = 40 }) {
           {/* Black Inner Lens Aperture Ring */}
           <circle cx="222" cy="110" r="44" fill="#0A0B0E" stroke="#FFFFFF" strokeWidth="4" />
 
-          {/* 6 Shutter Blades (Black & Orange) surrounding Center Opening */}
+          {/* 6 Shutter Blades (White & Orange) */}
           <g className="aperture-shutter-blades-full">
             <path d="M 222 72 L 244 92 L 230 114 L 208 100 Z" fill="#FFFFFF" />
             <path d="M 244 92 L 260 114 L 236 126 L 222 100 Z" fill="#FF8500" />
@@ -28,7 +28,7 @@ export default function PicturaLogo({ variant = 'horizontal', height = 40 }) {
             <circle cx="222" cy="110" r="16" fill="#0A0B0E" />
           </g>
 
-          {/* PICTURA Geometric Logotype */}
+          {/* PICTURA Logotype */}
           <g fill="#FFFFFF">
             <path d="M 40 260 H 68 C 78 260 86 268 86 278 C 86 288 78 296 68 296 H 55 V 312 H 40 V 260 Z M 55 274 V 282 H 68 C 70 282 72 280 72 278 C 72 276 70 274 68 274 H 55 Z" />
             <path d="M 94 260 H 108 V 312 H 94 V 260 Z" />
@@ -53,19 +53,42 @@ export default function PicturaLogo({ variant = 'horizontal', height = 40 }) {
     );
   }
 
-  // Horizontal Header Logo (Crisp, High Contrast Vector)
+  // Exact Horizontal Logo Vector (Transparent Background, No White Boxes)
   return (
     <div className="pictura-logo-wrap" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-      <img
-        src="./pictura-logo-official.png"
-        alt="Pictura Creations Logo"
-        style={{
-          height: `${height}px`,
-          width: 'auto',
-          filter: 'brightness(0) invert(1)',
-          objectFit: 'contain'
-        }}
-      />
+      <svg width={height * 1.15} height={height} viewBox="0 0 140 130" fill="none" className="pictura-logo-svg" xmlns="http://www.w3.org/2000/svg">
+        {/* Top-left Orange Corner Bracket */}
+        <path d="M 32 6 H 50 V 14 H 40 V 26 H 32 Z" fill="#FF8500" />
+
+        {/* Master White 'P' Stem and Loop */}
+        <path
+          d="M 40 16 H 85 C 108 16 124 33 124 55 C 124 77 108 94 85 94 H 64 V 122 H 40 V 16 Z"
+          fill="#FFFFFF"
+        />
+
+        {/* Outer Black Lens Ring */}
+        <circle cx="82" cy="55" r="23" fill="#0A0B0E" stroke="#FFFFFF" strokeWidth="2.5" />
+
+        {/* Aperture Shutter Blades inside Lens */}
+        <g className="aperture-shutter-blades">
+          <path d="M 82 35 L 93 45 L 86 56 L 75 49 Z" fill="#FFFFFF" />
+          <path d="M 93 45 L 101 56 L 89 62 L 82 49 Z" fill="#FF8500" />
+          <path d="M 101 56 L 93 67 L 82 62 L 89 49 Z" fill="#FFFFFF" />
+          <path d="M 93 67 L 82 75 L 76 63 L 82 50 Z" fill="#FF8500" />
+          <path d="M 82 75 L 71 67 L 76 56 L 87 63 Z" fill="#FFFFFF" />
+          <path d="M 71 67 L 63 56 L 75 50 L 82 63 Z" fill="#FF8500" />
+          <circle cx="82" cy="55" r="8" fill="#0A0B0E" />
+        </g>
+      </svg>
+
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1 }}>
+        <span className="pictura-text-brand" style={{ fontSize: `${height * 0.46}px`, letterSpacing: '0.12em', color: '#FFFFFF', fontWeight: 900 }}>
+          PICTURA
+        </span>
+        <span className="pictura-sub-tagline" style={{ fontSize: `${height * 0.24}px`, letterSpacing: '0.28em', color: '#FF8500', marginTop: '3px', fontWeight: 800 }}>
+          CREATIONS
+        </span>
+      </div>
     </div>
   );
 }
