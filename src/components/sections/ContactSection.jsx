@@ -69,81 +69,79 @@ export default function ContactSection() {
         <div className="contact-map-col">
           <div className="australia-map-card">
             <svg viewBox="0 0 780 520" className="australia-map-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Geographically Accurate Australia Continent Path */}
+              {/* Detailed Australia Coastline Path */}
               <path
-                d="M 535,45 
-                   L 550,110 
-                   L 490,125 
-                   L 470,85 
-                   L 435,70 
-                   L 395,85 
-                   L 375,65 
-                   L 315,85 
-                   L 255,95 
-                   L 230,125 
-                   L 165,145 
-                   L 125,185 
-                   L 85,235 
-                   L 95,295 
-                   L 90,345 
-                   L 105,405 
-                   L 135,425 
-                   L 175,415 
-                   L 245,395 
-                   L 325,385 
-                   L 395,385 
-                   L 445,415 
-                   L 460,435 
-                   L 485,415 
-                   L 515,445 
-                   L 575,455 
-                   L 615,425 
-                   L 655,365 
-                   L 665,305 
-                   L 675,255 
-                   L 645,195 
-                   L 605,145 
-                   L 545,105 Z"
+                d="M 508,42 
+                   C 515,60 522,85 526,115 
+                   C 512,126 498,136 485,140 
+                   C 472,138 458,130 450,118 
+                   C 442,98 430,90 418,94 
+                   C 406,104 394,110 380,106 
+                   C 370,88 355,68 340,66 
+                   C 325,68 310,82 302,96 
+                   C 285,92 268,90 252,100 
+                   C 238,98 222,92 206,105 
+                   C 190,116 175,126 160,132 
+                   C 140,146 122,162 110,182 
+                   C 94,206 84,232 78,262 
+                   C 76,292 80,322 86,352 
+                   C 92,378 98,398 108,416 
+                   C 120,426 138,422 154,415 
+                   C 182,408 212,402 242,402 
+                   C 282,405 322,418 362,430 
+                   C 402,440 442,442 475,430 
+                   C 485,416 492,406 502,416 
+                   C 515,428 530,440 546,442 
+                   C 562,445 578,438 590,422 
+                   C 608,400 625,372 638,342 
+                   C 650,312 658,278 654,246 
+                   C 646,214 632,184 615,156 
+                   C 596,128 574,102 548,78 
+                   C 532,58 518,46 508,42 Z"
                 fill="url(#map-grad)"
-                stroke="rgba(255, 85, 0, 0.55)"
-                strokeWidth="2.5"
+                stroke="rgba(255, 85, 0, 0.75)"
+                strokeWidth="2.2"
                 strokeLinejoin="round"
               />
 
               {/* Tasmania Island */}
               <path
-                d="M 575,475 L 610,480 L 600,510 L 565,500 Z"
+                d="M 552,465 C 570,462 585,468 592,478 C 588,495 575,505 558,502 C 546,492 544,478 552,465 Z"
                 fill="url(#map-grad)"
-                stroke="rgba(255, 85, 0, 0.55)"
+                stroke="rgba(255, 85, 0, 0.75)"
                 strokeWidth="2"
                 strokeLinejoin="round"
               />
 
-              {/* Geographic Grid Lines */}
-              <line x1="300" y1="60" x2="300" y2="440" stroke="rgba(255, 255, 255, 0.06)" strokeDasharray="4 4" />
-              <line x1="490" y1="60" x2="490" y2="450" stroke="rgba(255, 255, 255, 0.06)" strokeDasharray="4 4" />
-              <line x1="90" y1="260" x2="670" y2="260" stroke="rgba(255, 255, 255, 0.06)" strokeDasharray="4 4" />
+              {/* State Boundaries (Dashed Lines) */}
+              <line x1="252" y1="100" x2="252" y2="402" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+              <line x1="252" y1="255" x2="475" y2="255" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+              <line x1="418" y1="94" x2="418" y2="255" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
+              <line x1="418" y1="310" x2="650" y2="275" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
 
-              {/* City Dots */}
-              {/* Perth */}
-              <circle cx="105" cy="385" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="85" y="405" fill="#9EA2B0" fontSize="9" fontWeight="700">Perth</text>
+              {/* Major Cities */}
+              <circle cx="108" cy="402" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+              <text x="85" y="420" fill="#A0A5B5" fontSize="10" fontWeight="700">Perth</text>
 
-              {/* Melbourne */}
-              <circle cx="560" cy="445" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="535" y="465" fill="#9EA2B0" fontSize="9" fontWeight="700">Melbourne</text>
+              <circle cx="340" cy="74" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+              <text x="320" y="60" fill="#A0A5B5" fontSize="10" fontWeight="700">Darwin</text>
 
-              {/* Sydney Dot */}
-              <circle cx="650" cy="360" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-              <text x="662" y="364" fill="#9EA2B0" fontSize="9" fontWeight="700">Sydney</text>
+              <circle cx="475" cy="418" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+              <text x="442" y="436" fill="#A0A5B5" fontSize="10" fontWeight="700">Adelaide</text>
+
+              <circle cx="548" cy="440" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+              <text x="522" y="458" fill="#A0A5B5" fontSize="10" fontWeight="700">Melbourne</text>
+
+              <circle cx="634" cy="342" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
+              <text x="644" y="347" fill="#A0A5B5" fontSize="10" fontWeight="700">Sydney</text>
 
               {/* PRIMARY HEADQUARTERS PIN: BRISBANE, QUEENSLAND */}
-              <g className="brisbane-pin-group" transform="translate(670, 250)">
-                <circle r="32" fill="rgba(255, 85, 0, 0.25)" className="pulse-ring-map" />
-                <circle r="16" fill="rgba(255, 85, 0, 0.45)" />
+              <g className="brisbane-pin-group" transform="translate(650, 246)">
+                <circle r="30" fill="rgba(255, 85, 0, 0.25)" className="pulse-ring-map" />
+                <circle r="15" fill="rgba(255, 85, 0, 0.45)" />
                 <circle r="8" fill="#FF5500" />
                 <circle r="3" fill="#FFFFFF" />
-                <text x="-160" y="-12" fill="#FF8800" fontSize="13" fontWeight="900" letterSpacing="1">BRISBANE, QUEENSLAND HQ</text>
+                <text x="-165" y="-12" fill="#FF8800" fontSize="13" fontWeight="900" letterSpacing="1">BRISBANE, QUEENSLAND HQ</text>
               </g>
 
               {/* Gradient Defs */}
