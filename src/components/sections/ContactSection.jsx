@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import LogoParticleCanvas from '../LogoParticleCanvas';
+import BusinessCard3D from '../BusinessCard3D';
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -66,9 +66,9 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right Column: Interactive Dot Matrix Particle Logo Canvas */}
+        {/* Right Column: 3D Interactive Flippable Social Media ID Card */}
         <div className="contact-map-col">
-          <LogoParticleCanvas />
+          <BusinessCard3D />
         </div>
       </div>
     </section>
