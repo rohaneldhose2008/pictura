@@ -27,5 +27,4 @@ dist-isolation
 *.sln
 *.sw?
 
-# Legacy heavy images folder
-images/
+
