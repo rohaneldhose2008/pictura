@@ -178,7 +178,7 @@ class Title {
     const textHeight = this.plane.scale.y * 0.15;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+    this.mesh.position.y = this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.05;
     this.mesh.setParent(this.plane);
   }
 }
