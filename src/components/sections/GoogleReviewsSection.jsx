@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, CheckCircle, ExternalLink, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import './GoogleReviewsSection.css';
 
@@ -48,6 +48,20 @@ const GOOGLE_REVIEWS = [
 export default function GoogleReviewsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  useEffect(() => {
+    // Load Elfsight script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   const nextReview = () => {
     setActiveIndex((prev) => (prev + 1) % GOOGLE_REVIEWS.length);
   };
@@ -94,6 +108,11 @@ export default function GoogleReviewsSection() {
             <ExternalLink size={14} />
           </a>
         </div>
+      </div>
+
+      {/* Live Elfsight Google Reviews Embed Widget */}
+      <div className="elfsight-widget-wrapper" style={{ margin: '0 auto 40px auto', maxWidth: '960px' }}>
+        <div className="elfsight-app-2f05f024-4a71-4dc8-ab33-cc995e829437" data-elfsight-app-lazy></div>
       </div>
 
       {/* Featured Testimonial Spotlight */}
