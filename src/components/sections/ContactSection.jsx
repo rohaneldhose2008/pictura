@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import LogoParticleCanvas from '../LogoParticleCanvas';
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -65,62 +66,9 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right Column: Exact Australia Vector Map */}
+        {/* Right Column: Interactive Dot Matrix Particle Logo Canvas */}
         <div className="contact-map-col">
-          <div className="australia-map-card">
-            <div className="exact-map-container">
-              <img
-                src="./australia-outline.png"
-                alt="Australia Map Outline"
-                className="australia-exact-outline-img"
-              />
-              <svg viewBox="0 0 780 520" className="australia-overlay-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* State Boundaries (Dashed Lines) */}
-                <line x1="260" y1="110" x2="260" y2="400" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-                <line x1="260" y1="250" x2="480" y2="250" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-                <line x1="430" y1="100" x2="430" y2="250" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-                <line x1="430" y1="310" x2="650" y2="275" stroke="rgba(255, 255, 255, 0.12)" strokeDasharray="3 3" />
-
-                {/* Major Cities */}
-                <circle cx="115" cy="385" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="92" y="405" fill="#A0A5B5" fontSize="10" fontWeight="700">Perth</text>
-
-                <circle cx="340" cy="85" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="320" y="70" fill="#A0A5B5" fontSize="10" fontWeight="700">Darwin</text>
-
-                <circle cx="475" cy="415" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="442" y="432" fill="#A0A5B5" fontSize="10" fontWeight="700">Adelaide</text>
-
-                <circle cx="550" cy="435" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="524" y="452" fill="#A0A5B5" fontSize="10" fontWeight="700">Melbourne</text>
-
-                <circle cx="638" cy="335" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="648" y="340" fill="#A0A5B5" fontSize="10" fontWeight="700">Sydney</text>
-
-                {/* Brisbane Marker */}
-                <circle cx="642" cy="240" r="3.5" fill="rgba(255, 255, 255, 0.6)" />
-                <text x="652" y="244" fill="#A0A5B5" fontSize="10" fontWeight="700">Brisbane</text>
-
-                {/* PRIMARY HEADQUARTERS PIN: TOWNSVILLE, QUEENSLAND */}
-                <g className="brisbane-pin-group" transform="translate(585, 168)">
-                  <circle r="30" fill="rgba(255, 85, 0, 0.25)" className="pulse-ring-map" />
-                  <circle r="15" fill="rgba(255, 85, 0, 0.45)" />
-                  <circle r="8" fill="#FF5500" />
-                  <circle r="3" fill="#FFFFFF" />
-                  <text x="-175" y="-12" fill="#FF8800" fontSize="13" fontWeight="900" letterSpacing="1">TOWNSVILLE, QUEENSLAND HQ</text>
-                </g>
-              </svg>
-            </div>
-
-            {/* Townsville, Queensland Badge */}
-            <div className="map-location-badge">
-              <div className="map-badge-dot"></div>
-              <div>
-                <span className="map-badge-city">TOWNSVILLE, QUEENSLAND HQ</span>
-                <span className="map-badge-state">AUSTRALIA WIDE COMMISSIONS</span>
-              </div>
-            </div>
-          </div>
+          <LogoParticleCanvas />
         </div>
       </div>
     </section>
