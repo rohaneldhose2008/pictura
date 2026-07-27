@@ -15,7 +15,7 @@ const SUSMI_PETTER_FILES = [
 ];
 
 const GALLERY_IMAGES = SUSMI_PETTER_FILES.map((fileName) => ({
-  src: `./images/Susmi %26 Petter/${fileName}`,
+  src: `./images/susmi-petter/${fileName}`,
   alt: `Susmi & Petter Celebration - ${fileName}`
 }));
 
