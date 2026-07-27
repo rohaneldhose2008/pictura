@@ -181,10 +181,12 @@ class Title {
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
     
-    // Account for inverted 3D plane orientation when bend is negative (< 0)
     const isTop = this.textPosition === 'top';
-    const directionSign = (this.bend < 0) ? (isTop ? -1 : 1) : (isTop ? 1 : -1);
-    this.mesh.position.y = directionSign * (this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.08);
+    if (isTop) {
+      this.mesh.position.y = (this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.25);
+    } else {
+      this.mesh.position.y = -(this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.25);
+    }
     
     this.mesh.setParent(this.plane);
   }
