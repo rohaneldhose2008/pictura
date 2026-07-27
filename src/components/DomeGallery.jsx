@@ -519,15 +519,30 @@ export default function DomeGallery({
         rootRef.current?.setAttribute('data-enlarging', 'true');
       }, 16);
 
-      const wantsResize = openedImageWidth || openedImageHeight;
+      const isLandscape = img.naturalWidth > 0 && img.naturalHeight > 0 ? (img.naturalWidth > img.naturalHeight) : false;
+      const isMobile = window.innerWidth <= 768;
+
+      let tempWidth, tempHeight;
+      if (isLandscape) {
+        tempWidth = isMobile ? `${Math.min(window.innerWidth * 0.9, 520)}px` : '640px';
+        tempHeight = isMobile ? `${Math.min(window.innerHeight * 0.55, 360)}px` : '420px';
+      } else {
+        tempWidth = isMobile ? `${Math.min(window.innerWidth * 0.82, 340)}px` : '420px';
+        tempHeight = isMobile ? `${Math.min(window.innerHeight * 0.68, 480)}px` : '560px';
+      }
+
+      img.style.objectFit = 'contain';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      overlay.style.background = 'rgba(10, 12, 17, 0.96)';
+
+      const wantsResize = true;
       if (wantsResize) {
         const onFirstEnd = ev => {
           if (ev.propertyName !== 'transform') return;
           overlay.removeEventListener('transitionend', onFirstEnd);
           const prevTransition = overlay.style.transition;
           overlay.style.transition = 'none';
-          const tempWidth = openedImageWidth || `${frameR.width}px`;
-          const tempHeight = openedImageHeight || `${frameR.height}px`;
           overlay.style.width = tempWidth;
           overlay.style.height = tempHeight;
           const newRect = overlay.getBoundingClientRect();

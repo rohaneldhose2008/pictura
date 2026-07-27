@@ -3,7 +3,7 @@ import './GallerySection.css';
 
 const SUSMI_PETTER_FILES = [
   'ASK00126.jpg', 'ASK00387.jpg', 'ASK07116.jpg', 'ASK07194.jpg', 'ASK07530.jpg', 'ASK07542.jpg',
-  'ASK07574.jpg', 'ASK07596.jpg', 'ASK07601.jpg', 'ASK07604.jpg', 'ASK07625.jpg', 'ASK07628.jpg',
+  'ASK07596.jpg', 'ASK07601.jpg', 'ASK07604.jpg', 'ASK07625.jpg', 'ASK07628.jpg',
   'ASK07657.jpg', 'ASK07671.jpg', 'ASK07691.jpg', 'ASK07719.jpg', 'ASK07778.jpg', 'ASK07810.jpg',
   'ASK07812.jpg', 'ASK07824.jpg', 'ASK07851.jpg', 'ASK07859.jpg', 'ASK07890.jpg', 'ASK07902.jpg',
   'ASK07915.jpg', 'ASK07978.jpg', 'ASK07981.jpg', 'ASK08017.jpg', 'ASK08030.jpg', 'ASK08062.jpg',
