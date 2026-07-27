@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import PicturaLogo from '../PicturaLogo';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -25,26 +26,13 @@ export default function Navbar() {
   return (
     <header className={`pictura-navbar ${scrolled ? 'pictura-navbar--scrolled' : ''}`}>
       <div className="unified-capsule-bar">
-        {/* Left End: Increased 'P' Brand Icon */}
+        {/* Left End: Bigger Animated Logo */}
         <button
           onClick={() => scrollToSection('home')}
           className="capsule-logo-icon-btn"
           aria-label="Pictura Creations Home"
         >
-          <svg width="32" height="32" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 40 10 H 60 V 18 H 48 V 32 H 40 Z" fill="#FF5500" />
-            <path d="M 50 20 H 95 C 118 20 135 38 135 60 C 135 82 118 100 95 100 H 75 V 130 H 50 V 20 Z" fill="#FFFFFF" />
-            <circle cx="92" cy="60" r="28" fill="#0A0B0E" stroke="#FFFFFF" strokeWidth="3" />
-            <g transform="translate(92, 60)">
-              <path d="M 0 -22 L 12 -12 L 6 0 L -8 -8 Z" fill="#FFFFFF" />
-              <path d="M 12 -12 L 22 0 L 8 6 L 0 -8 Z" fill="#FF5500" />
-              <path d="M 22 0 L 12 12 L 0 6 L 8 -8 Z" fill="#FFFFFF" />
-              <path d="M 12 12 L 0 22 L -6 8 L 0 -6 Z" fill="#FF5500" />
-              <path d="M 0 22 L -12 12 L -6 0 L 8 8 Z" fill="#FFFFFF" />
-              <path d="M -12 12 L -22 0 L -8 -6 L 0 8 Z" fill="#FF5500" />
-              <circle r="8" fill="#0A0B0E" />
-            </g>
-          </svg>
+          <PicturaLogo variant="horizontal" height={42} />
         </button>
 
         {/* Center: Nav Links */}

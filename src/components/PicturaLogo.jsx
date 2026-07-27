@@ -1,34 +1,36 @@
-export default function PicturaLogo({ variant = 'horizontal', height = 36 }) {
+import './PicturaLogo.css';
+
+export default function PicturaLogo({ variant = 'horizontal', height = 44 }) {
   if (variant === 'full') {
     return (
-      <div className="pictura-full-logo-wrap" style={{ textAlign: 'center', display: 'inline-flex', flexDirection: 'column', alignItems: 'center' }}>
-        <svg viewBox="0 0 400 360" width="100%" height={height * 3} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="pictura-logo-wrap pictura-full-card-logo">
+        <svg viewBox="0 0 400 360" width="100%" height={height * 3} fill="none" className="pictura-logo-svg" xmlns="http://www.w3.org/2000/svg">
           {/* Top-left Orange Corner Bracket */}
           <path d="M 130 30 H 168 V 44 H 144 V 72 H 130 Z" fill="#FF5500" />
 
           {/* Master 'P' Stem and Loop */}
           <path
             d="M 148 48 H 215 C 248 48 275 75 275 108 C 275 141 248 168 215 168 H 188 V 230 H 148 V 48 Z"
-            fill="#1A1C1E"
+            fill="#FFFFFF"
           />
 
-          {/* White Outer Aperture Ring */}
-          <circle cx="212" cy="108" r="42" fill="#FFFFFF" />
+          {/* Black Outer Aperture Ring */}
+          <circle cx="212" cy="108" r="42" fill="#0A0B0E" stroke="#FFFFFF" strokeWidth="4" />
 
-          {/* Shutter Blades Mechanism */}
-          <g transform="translate(212, 108)">
-            {/* 8 Aperture Blades with alternating Orange & Dark Fill */}
-            <path d="M 0 -34 L 18 -18 L 10 0 L -12 -12 Z" fill="#1A1C1E" />
-            <path d="M 18 -18 L 34 0 L 12 10 L 0 -12 Z" fill="#FF5500" />
-            <path d="M 34 0 L 18 18 L 0 10 L 12 -12 Z" fill="#1A1C1E" />
-            <path d="M 18 18 L 0 34 L -10 12 L 0 -10 Z" fill="#FF5500" />
-            <path d="M 0 34 L -18 18 L -10 0 L 12 12 Z" fill="#1A1C1E" />
-            <path d="M -18 18 L -34 0 L -12 -10 L 0 12 Z" fill="#FF5500" />
-            <path d="M -34 0 L -18 -18 L 0 -10 L -12 12 Z" fill="#1A1C1E" />
-            <path d="M -18 -18 L 0 -34 L 10 -12 L -12 -10 Z" fill="#FF5500" />
+          {/* Shutter Blades Mechanism with Rotating Animation */}
+          <g className="aperture-shutter-blades-full">
+            {/* 8 Aperture Blades with alternating Orange & White Fill */}
+            <path d="M 212 74 L 230 90 L 222 108 L 200 96 Z" fill="#FFFFFF" />
+            <path d="M 230 90 L 246 108 L 224 118 L 212 96 Z" fill="#FF5500" />
+            <path d="M 246 108 L 230 126 L 212 118 L 224 96 Z" fill="#FFFFFF" />
+            <path d="M 230 126 L 212 142 L 202 120 L 212 98 Z" fill="#FF5500" />
+            <path d="M 212 142 L 194 126 L 202 108 L 224 120 Z" fill="#FFFFFF" />
+            <path d="M 194 126 L 178 108 L 200 98 L 212 120 Z" fill="#FF5500" />
+            <path d="M 178 108 L 194 90 L 212 98 L 200 120 Z" fill="#FFFFFF" />
+            <path d="M 194 90 L 212 74 L 222 96 L 200 98 Z" fill="#FF5500" />
             
             {/* Center Opening Lens Circle */}
-            <circle r="14" fill="#FFFFFF" />
+            <circle cx="212" cy="108" r="14" fill="#0A0B0E" />
           </g>
 
           {/* PICTURA Geometric Logotype */}
@@ -63,10 +65,10 @@ export default function PicturaLogo({ variant = 'horizontal', height = 36 }) {
     );
   }
 
-  // Horizontal Header Variant
+  // Horizontal Header Variant (Larger & Animated)
   return (
-    <div className="pictura-logo-horizontal" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-      <svg width={height * 1.1} height={height} viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="pictura-logo-wrap" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
+      <svg width={height * 1.25} height={height} viewBox="0 0 160 140" fill="none" className="pictura-logo-svg" xmlns="http://www.w3.org/2000/svg">
         {/* Top-left Orange Corner Bracket */}
         <path d="M 40 10 H 60 V 18 H 48 V 32 H 40 Z" fill="#FF5500" />
 
@@ -79,8 +81,8 @@ export default function PicturaLogo({ variant = 'horizontal', height = 36 }) {
         {/* Outer Aperture Ring */}
         <circle cx="92" cy="60" r="28" fill="#0A0B0E" stroke="#FFFFFF" strokeWidth="3" />
 
-        {/* Shutter Blades Mechanism */}
-        <g transform="translate(92, 60)">
+        {/* Shutter Blades Mechanism with Rotating Animation */}
+        <g className="aperture-shutter-blades">
           <path d="M 0 -22 L 12 -12 L 6 0 L -8 -8 Z" fill="#FFFFFF" />
           <path d="M 12 -12 L 22 0 L 8 6 L 0 -8 Z" fill="#FF5500" />
           <path d="M 22 0 L 12 12 L 0 6 L 8 -8 Z" fill="#FFFFFF" />
@@ -92,10 +94,10 @@ export default function PicturaLogo({ variant = 'horizontal', height = 36 }) {
       </svg>
 
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1 }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontSize: `${height * 0.42}px`, fontWeight: 900, letterSpacing: '0.12em', color: '#FFFFFF' }}>
+        <span className="pictura-text-brand" style={{ fontSize: `${height * 0.44}px` }}>
           PICTURA
         </span>
-        <span style={{ fontSize: `${height * 0.22}px`, letterSpacing: '0.3em', color: 'var(--accent-orange)', fontWeight: 700, marginTop: '3px' }}>
+        <span className="pictura-sub-tagline" style={{ fontSize: `${height * 0.22}px` }}>
           CREATIONS
         </span>
       </div>

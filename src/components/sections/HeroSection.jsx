@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import PicturaLogo from '../PicturaLogo';
 import './HeroSection.css';
 
 const HERO_SLIDES = [
@@ -11,7 +12,7 @@ const HERO_SLIDES = [
   {
     id: 2,
     url: 'https://images.unsplash.com/photo-1549180030-48bf079fb38a?q=80&w=2070&auto=format&fit=crop',
-    caption: 'Brisbane Queensland Skyline'
+    caption: 'Townsville Queensland Skyline'
   },
   {
     id: 3,
@@ -47,6 +48,11 @@ export default function HeroSection({ onExplore, onBook }) {
       </div>
 
       <div className="hero-content-container">
+        {/* Featured Animated Master Brand Emblem */}
+        <div className="hero-brand-emblem-wrap text-center">
+          <PicturaLogo variant="full" height={80} />
+        </div>
+
         {/* Main Headline */}
         <div className="hero-text-body">
           <h1 className="hero-main-title">
@@ -54,7 +60,7 @@ export default function HeroSection({ onExplore, onBook }) {
           </h1>
 
           <p className="hero-main-subtitle">
-            WE CREATE MEMORIES THAT LAST FOREVER.
+            WE DON'T JUST CLICK. WE CREATE STORIES. TURNING YOUR PRECIOUS MOMENTS INTO TIMELESS CINEMATIC MEMORIES.
           </p>
         </div>
 

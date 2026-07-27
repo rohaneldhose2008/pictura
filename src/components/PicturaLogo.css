@@ -1,0 +1,93 @@
+.pictura-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pictura-logo-wrap:hover {
+  transform: scale(1.04);
+}
+
+.pictura-logo-svg {
+  filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.4));
+  transition: filter 0.3s ease;
+}
+
+.pictura-logo-wrap:hover .pictura-logo-svg {
+  filter: drop-shadow(0 0 20px rgba(255, 85, 0, 0.85));
+}
+
+/* Continuous Subtle Aperture Rotation */
+.aperture-shutter-blades {
+  transform-origin: 92px 60px;
+  animation: aperture-spin 18s linear infinite;
+}
+
+.aperture-shutter-blades-full {
+  transform-origin: 212px 108px;
+  animation: aperture-spin 18s linear infinite;
+}
+
+.pictura-logo-wrap:hover .aperture-shutter-blades,
+.pictura-logo-wrap:hover .aperture-shutter-blades-full {
+  animation-duration: 4s;
+}
+
+@keyframes aperture-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer animation on PICTURA text */
+.pictura-text-brand {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: 0.14em;
+  background: linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 40%, #FF8800 50%, #FFFFFF 60%, #FFFFFF 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer 6s infinite;
+}
+
+@keyframes text-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.pictura-sub-tagline {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  color: var(--accent-orange, #FF5500);
+  font-weight: 800;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.pictura-full-card-logo {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  background: rgba(14, 16, 21, 0.7);
+  border: 1px solid rgba(255, 85, 0, 0.3);
+  border-radius: 28px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(255, 85, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.pictura-full-card-logo:hover {
+  border-color: rgba(255, 85, 0, 0.6);
+  box-shadow: 0 25px 70px rgba(255, 85, 0, 0.25), inset 0 0 40px rgba(255, 85, 0, 0.15);
+  transform: translateY(-4px);
+}
