@@ -48,19 +48,23 @@ export default function HeroSection({ onExplore, onBook }) {
       </div>
 
       <div className="hero-content-container">
-        {/* Main Headline */}
-        <div className="hero-text-body">
-          <div className="hero-location-chip" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(255, 85, 0, 0.15)', border: '1px solid rgba(255, 85, 0, 0.35)', marginBottom: '20px', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.18em', color: '#FF5500' }}>
-            <span>ESTABLISHED 2020 • TOWNSVILLE, QUEENSLAND</span>
+        {/* Main Headline wrapped in Liquid Glass Card */}
+        <div className="hero-liquid-glass-card">
+          <div className="hero-glass-shine" />
+          
+          <div className="hero-text-body">
+            <div className="hero-location-chip" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(255, 85, 0, 0.15)', border: '1px solid rgba(255, 85, 0, 0.35)', marginBottom: '20px', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.18em', color: '#FF5500' }}>
+              <span>ESTABLISHED 2020 • TOWNSVILLE, QUEENSLAND</span>
+            </div>
+
+            <h1 className="hero-main-title">
+              TOWNSVILLE'S PREMIER <span className="text-orange-glow">VISUAL STORYTELLERS</span>
+            </h1>
+
+            <p className="hero-main-subtitle">
+              WE DON'T JUST CLICK. WE CREATE STORIES. SPECIALISING IN CINEMATIC PHOTOGRAPHY, HIGH-DEFINITION VIDEOGRAPHY & AERIAL DRONE PRODUCTIONS ACROSS TOWNSVILLE & QUEENSLAND.
+            </p>
           </div>
-
-          <h1 className="hero-main-title">
-            TOWNSVILLE'S PREMIER <span className="text-orange-glow">VISUAL STORYTELLERS</span>
-          </h1>
-
-          <p className="hero-main-subtitle">
-            WE DON'T JUST CLICK. WE CREATE STORIES. SPECIALISING IN CINEMATIC PHOTOGRAPHY, HIGH-DEFINITION VIDEOGRAPHY & AERIAL DRONE PRODUCTIONS ACROSS TOWNSVILLE & QUEENSLAND.
-          </p>
         </div>
 
         {/* Action Buttons & Slide Dots */}
