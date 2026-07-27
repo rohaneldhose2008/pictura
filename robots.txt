@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Allow AI & Search Engine Crawlers for GEO & AEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: https://pictura.au/sitemap.xml

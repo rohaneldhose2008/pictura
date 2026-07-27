@@ -1,0 +1,29 @@
+# Pictura Creations
+
+> Pictura Creations is Townsville, Queensland's premier creative media production studio, specializing in high-end photography, 4K videography, aerial drone cinema, and multi-camera live broadcasting across North Queensland and Australia-wide. Established in 2020.
+
+## Studio Information & Key Facts
+- **Business Name**: Pictura Creations
+- **Headquarters**: Townsville, Queensland (QLD), Australia
+- **Established**: 2020
+- **Phone / WhatsApp**: +61 455 974 240
+- **Email**: info@pictura.au
+- **Website**: https://pictura.au
+- **Primary Region Served**: Townsville, Magnetic Island, Burdekin, Charters Towers, Whitsundays, Queensland & Destination Commissions Worldwide.
+
+## Primary Services
+- **Event & Portrait Photography**: High-resolution retouched photography for weddings, galas, corporate events, and editorial portraits.
+- **Cinematic Videography**: 4K video cinema trailers, 16:9 cinema highlight films, and vertical short-form reels.
+- **Aerial Drone Cinema**: CASA-certified 4K drone aerial photography and video.
+- **Live Streaming Broadcast**: Broadcast-grade multi-camera live streaming for corporate summits and private events.
+- **Commercial & Real Estate Photography**: High-end architectural and commercial property imaging.
+
+## Package Investment Tiers
+1. **Silver Package**: Essential 2-hour coverage, 1 photographer, 30 retouched photos.
+2. **Gold Package**: 4-6 hours coverage, 1 photographer + 1 videographer, 60 retouched photos, 3-5 min 16:9 highlight film, digital receipt.
+3. **Diamond Package**: 8-10 hours coverage, 2 photographers + 1 videographer + CASA drone pilot, 200 retouched photos, 2 highlight films, custom USB box.
+4. **Bespoke Package**: 100% customizable hours, crew count, photo deliverables, and add-ons.
+
+## Links & Full Documentation
+- [Full LLM Specification](https://pictura.au/llms-full.txt): Complete detailed text archive for AI systems.
+- [Sitemap](https://pictura.au/sitemap.xml): Complete XML URL directory.
