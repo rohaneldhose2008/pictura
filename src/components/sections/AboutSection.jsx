@@ -6,19 +6,19 @@ const WHY_US_CARDS = [
     id: 1,
     title: 'CREATIVITY',
     icon: Sparkles,
-    desc: 'Unique concepts and creative approach for every single project.'
+    desc: 'We craft bespoke visual concepts tailored to your unique story across Townsville, Magnetic Island, and North Queensland. From candid wedding moments to high-end commercial branding, we turn raw emotion into timeless cinematic art.'
   },
   {
     id: 2,
     title: 'PRECISION',
     icon: Target,
-    desc: 'Attention to every detail to deliver pure visual perfection.'
+    desc: 'Meticulous attention to detail in lighting, color grading, audio capture, and 4K photo retouching. Every frame is handcrafted to guarantee pure visual perfection that leaves a lasting impression on your audience.'
   },
   {
     id: 3,
     title: 'INNOVATION',
     icon: Rocket,
-    desc: 'Advanced 4K cinema technology and modern drone techniques.'
+    desc: 'Equipped with RED 8K cinema cameras, Sony FX flagship rigs, bonded 4K live streaming, and CASA-licensed aerial drone cinema. We bring world-class production technology to every commission in Queensland.'
   }
 ];
 
