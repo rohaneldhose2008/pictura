@@ -31,11 +31,11 @@ export default function AboutSection() {
           <div className="section-tag">OUR STORY & PHILOSOPHY</div>
 
           <h2 className="section-title about-title">
-            MORE THAN A PHOTOGRAPHY COMPANY WE ARE <span className="text-orange">STORYTELLERS.</span>
+            CRAFTING UNFORGETTABLE VISUAL NARRATIVES ACROSS <span className="text-orange">TOWNSVILLE & BEYOND.</span>
           </h2>
 
           <p className="about-description">
-            Pictura Creations is a Brisbane-based creative production studio specializing in event photography, 4K videography, multi-camera live streaming, and drone aerial cinema. Established in 2020, we blend creative passion and technology to craft visual stories across Queensland and Australia.
+            Pictura Creations is Townsville's premier creative media production studio, specializing in high-end photography, 4K videography, aerial drone cinema, and multi-camera live broadcasting. Established in 2020 in Townsville, Queensland, we combine cinematic artistry with cutting-edge technology to capture the authentic emotion, beauty, and energy of every moment across North Queensland.
           </p>
         </div>
 
@@ -44,13 +44,13 @@ export default function AboutSection() {
           <div className="about-image-card">
             <img
               src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop"
-              alt="Professional Camera Lens Storytelling"
+              alt="Townsville Queensland Professional Photography"
               className="about-img"
             />
             <div className="about-img-glow"></div>
             <div className="about-img-badge">
               <span className="badge-title">EST. 2020</span>
-              <span className="badge-sub">BRISBANE, QUEENSLAND</span>
+              <span className="badge-sub">TOWNSVILLE, QUEENSLAND</span>
             </div>
           </div>
         </div>
