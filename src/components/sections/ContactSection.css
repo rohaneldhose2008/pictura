@@ -119,7 +119,8 @@
   height: auto;
   max-height: 400px;
   object-fit: contain;
-  filter: invert(1) drop-shadow(0 0 8px #FF5500) drop-shadow(0 0 16px rgba(255, 85, 0, 0.4));
+  filter: invert(1);
+  mix-blend-mode: screen;
   opacity: 0.95;
   user-select: none;
   pointer-events: none;
