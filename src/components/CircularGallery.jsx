@@ -183,9 +183,9 @@ class Title {
     
     const isTop = this.textPosition === 'top';
     if (isTop) {
-      this.mesh.position.y = (this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.25);
+      this.mesh.position.y = (this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.08);
     } else {
-      this.mesh.position.y = -(this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.25);
+      this.mesh.position.y = -(this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.08);
     }
     
     this.mesh.setParent(this.plane);
