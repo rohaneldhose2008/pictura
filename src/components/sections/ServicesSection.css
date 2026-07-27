@@ -1,0 +1,62 @@
+.services-section {
+  padding-top: 100px;
+  padding-bottom: 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-header {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+/* 3D Flying Circular Gallery Motion Viewport */
+.flying-gallery-viewport {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  margin-top: 10px;
+  background: transparent;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .flying-gallery-viewport {
+    height: 440px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flying-gallery-viewport {
+    height: 360px;
+  }
+}
+
+.services-bottom-cta {
+  margin-top: 30px;
+}
+
+.services-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #FF5500 0%, #E64A00 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 85, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.services-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 85, 0, 0.75);
+}

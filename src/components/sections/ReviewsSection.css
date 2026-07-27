@@ -1,0 +1,161 @@
+.reviews-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.reviews-header .section-tag {
+  justify-content: center;
+}
+
+.testimonial-card-wrap {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-card {
+  width: 100%;
+  background: rgba(14, 16, 21, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 48px 40px;
+  backdrop-filter: blur(16px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.review-quote-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 85, 0, 0.12);
+  border: 1px solid rgba(255, 85, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.stars-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.review-quote-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  font-style: italic;
+  color: #FFFFFF;
+  margin-bottom: 28px;
+  max-width: 680px;
+}
+
+.review-author-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF5500, #E64A00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.author-details {
+  text-align: left;
+}
+
+.author-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.author-meta {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+}
+
+.review-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(18, 20, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.review-nav-prev {
+  left: -24px;
+}
+
+.review-nav-next {
+  right: -24px;
+}
+
+@media (max-width: 768px) {
+  .review-nav-prev { left: 0; }
+  .review-nav-next { right: 0; }
+}
+
+.review-nav-btn:hover {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.6);
+}
+
+.partner-brands-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: all 0.4s ease;
+}
+
+.partner-brands-strip:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #C2C6D4;
+}

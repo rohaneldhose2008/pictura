@@ -1,0 +1,156 @@
+/* Marquee Infinite Ticker */
+.marquee-ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 85, 0, 0.08);
+  border-y: 1px solid rgba(255, 85, 0, 0.25);
+  padding: 10px 0;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeScroll 28s linear infinite;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-orange);
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Behance Hero Overhaul */
+.hero-section--behance {
+  min-height: 80vh;
+  border-radius: 36px;
+  border: 1px solid rgba(255, 85, 0, 0.35);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 85, 0, 0.12);
+}
+
+.hero-overlay-glass--behance {
+  background: linear-gradient(135deg, rgba(7, 8, 11, 0.92) 0%, rgba(14, 16, 21, 0.68) 100%);
+  padding: 85px 65px;
+}
+
+.hero-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: rgba(255, 85, 0, 0.14);
+  border: 1px solid rgba(255, 85, 0, 0.4);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF5500;
+  box-shadow: 0 0 10px #FF5500;
+  animation: pulseDot 1.6s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
+}
+
+.hero-title--behance {
+  font-size: clamp(3.4rem, 8.5vw, 6.8rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 18px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle--editorial {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: var(--text-sub);
+  max-width: 720px;
+  line-height: 1.65;
+  margin-bottom: 38px;
+}
+
+.cta-primary-btn--behance {
+  background: linear-gradient(135deg, #FF5500 0%, #FF7700 100%);
+  box-shadow: 0 12px 35px rgba(255, 85, 0, 0.55);
+}
+
+.cta-secondary-btn--glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.cta-showreel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 18px;
+  background: rgba(255, 85, 0, 0.12);
+  border: 1px solid rgba(255, 85, 0, 0.35);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-showreel-btn:hover {
+  background: rgba(255, 85, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Card Showcase Tags */
+.showcase-card--behance {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.showcase-card--behance:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 85, 0, 0.5);
+  box-shadow: 0 25px 60px rgba(255, 85, 0, 0.2);
+}
+
+.card-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(7, 8, 11, 0.85);
+  border: 1px solid rgba(255, 85, 0, 0.4);
+  color: var(--accent-orange);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(8px);
+}
+
+.awards-banner-card--behance {
+  border-color: rgba(255, 85, 0, 0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}

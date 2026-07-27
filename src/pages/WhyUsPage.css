@@ -1,0 +1,96 @@
+.whyus-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+}
+
+.whyus-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+}
+
+.pillar-card {
+  padding: 36px 28px;
+  position: relative;
+}
+
+.pillar-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgba(255, 107, 0, 0.25);
+}
+
+.pillar-icon {
+  color: var(--accent-orange);
+  margin-bottom: 20px;
+}
+
+.pillar-card h3 {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.pillar-card p {
+  font-size: 0.92rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.whyus-tech-section {
+  margin-top: 60px;
+}
+
+.tech-box {
+  padding: 44px;
+}
+
+.tech-box__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.tech-box__header h2 {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+.tech-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.tech-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.tech-spec-item strong {
+  display: block;
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.tech-spec-item p {
+  font-size: 0.86rem;
+  color: var(--text-sub);
+  line-height: 1.4;
+}
+
+.tech-box__footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}

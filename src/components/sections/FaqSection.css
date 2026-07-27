@@ -1,0 +1,118 @@
+.faq-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.faq-header .section-tag {
+  justify-content: center;
+}
+
+.faq-list {
+  max-width: 840px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-accordion-item {
+  background: rgba(14, 16, 21, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-accordion-item.is-open {
+  border-color: rgba(255, 85, 0, 0.4);
+  background: rgba(18, 20, 28, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 22px 28px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.faq-chevron {
+  color: var(--accent-orange);
+  transition: transform 0.3s ease;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.faq-answer-content {
+  padding: 0 28px 22px 28px;
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+}
+
+.still-questions-banner {
+  max-width: 840px;
+  margin: 0 auto;
+  background: rgba(18, 20, 28, 0.7);
+  border: 1px dashed rgba(255, 85, 0, 0.4);
+  border-radius: 24px;
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sq-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.sq-sub {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+.sq-contact-btn {
+  padding: 10px 24px;
+  background: var(--accent-orange);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sq-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 85, 0, 0.65);
+}

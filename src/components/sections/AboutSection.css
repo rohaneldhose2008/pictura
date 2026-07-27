@@ -1,0 +1,154 @@
+.about-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.about-title {
+  max-width: 580px;
+}
+
+.about-description {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-sub);
+  margin-top: 14px;
+}
+
+.about-media-col {
+  position: relative;
+}
+
+.about-image-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 85, 0, 0.3);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+}
+
+.about-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-img-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7, 8, 11, 0.85) 100%);
+  pointer-events: none;
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: rgba(10, 11, 15, 0.85);
+  border: 1px solid rgba(255, 85, 0, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--accent-orange);
+  letter-spacing: 0.1em;
+}
+
+.badge-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+}
+
+/* Compact Merged "Why Choose Pictura" Cards */
+.why-us-merged-wrapper {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.why-us-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-us-card {
+  background: rgba(18, 20, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px 22px;
+  transition: all 0.3s ease;
+}
+
+.why-us-card:hover {
+  border-color: rgba(255, 85, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.why-us-icon-ring {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 85, 0, 0.12);
+  border: 1px solid rgba(255, 85, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.why-us-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.why-us-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  line-height: 1.45;
+}

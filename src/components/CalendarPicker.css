@@ -1,0 +1,116 @@
+.calendar-panel-box {
+  background: rgba(18, 18, 26, 0.85);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cal-month-year {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.cal-nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cal-nav-btn:hover {
+  background: rgba(255, 107, 0, 0.3);
+  border-color: var(--accent-orange);
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8E8E9B;
+  margin-bottom: 10px;
+}
+
+.cal-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cal-day:hover {
+  background: rgba(255, 107, 0, 0.2);
+  border-color: var(--accent-orange);
+}
+
+.cal-day--disabled {
+  background: transparent;
+  border: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.cal-day--today {
+  border-color: var(--accent-orange);
+}
+
+.cal-day--selected {
+  background: linear-gradient(135deg, #FF6B00 0%, #E05A00 100%);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.6);
+}
+
+.cal-selected-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: #8E8E9B;
+}
+
+.cal-selected-bar strong {
+  color: var(--accent-orange);
+  font-size: 0.9rem;
+}

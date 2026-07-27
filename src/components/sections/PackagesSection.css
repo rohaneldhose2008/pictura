@@ -1,0 +1,337 @@
+.packages-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.packages-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.packages-sub-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  max-width: 620px;
+  margin: 12px auto 0 auto;
+}
+
+.packages-grid-redesigned {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .packages-grid-redesigned {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pkg-card-redesigned {
+  position: relative;
+  background: rgba(14, 16, 21, 0.85);
+  border-radius: 28px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pkg-card-redesigned:hover {
+  transform: translateY(-8px);
+}
+
+/* ==========================================================================
+   SILVER TIER METALLIC THEME
+   ========================================================================== */
+.pkg-card-redesigned.tier-silver {
+  border: 1.5px solid rgba(208, 213, 221, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(208, 213, 221, 0.12);
+}
+
+.tier-silver:hover {
+  border-color: #E2E8F0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(226, 232, 240, 0.3);
+}
+
+.tier-silver .pkg-title {
+  color: #E2E8F0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #B0B8C5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tier-silver .pkg-icon-halo {
+  background: rgba(226, 232, 240, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.3);
+}
+
+.tier-silver .pkg-icon-svg {
+  color: #E2E8F0;
+}
+
+.tier-silver .check-ring {
+  background: rgba(226, 232, 240, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.3);
+}
+
+.tier-silver .check-icon-svg {
+  color: #E2E8F0;
+}
+
+.tier-silver .pkg-duration-badge {
+  background: rgba(226, 232, 240, 0.1);
+  border: 1px solid rgba(226, 232, 240, 0.25);
+  color: #E2E8F0;
+}
+
+.tier-silver .pkg-action-btn {
+  background: linear-gradient(135deg, #94A3B8 0%, #64748B 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(148, 163, 184, 0.4);
+}
+
+.tier-silver .pkg-action-btn:hover {
+  box-shadow: 0 10px 30px rgba(148, 163, 184, 0.7);
+}
+
+/* ==========================================================================
+   GOLD TIER METALLIC THEME (MOST POPULAR)
+   ========================================================================== */
+.pkg-card-redesigned.tier-gold {
+  border: 2px solid #FFD700;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.35);
+  background: rgba(20, 18, 12, 0.9);
+}
+
+.tier-gold:hover {
+  border-color: #FFEE55;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 215, 0, 0.55);
+}
+
+.tier-gold .pkg-title {
+  color: #FFD700;
+  background: linear-gradient(135deg, #FFF099 0%, #FFD700 60%, #FFAA00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tier-gold .pkg-icon-halo {
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.tier-gold .pkg-icon-svg {
+  color: #FFD700;
+}
+
+.tier-gold .check-ring {
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.tier-gold .check-icon-svg {
+  color: #FFD700;
+}
+
+.tier-gold .pkg-duration-badge {
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  color: #FFD700;
+}
+
+.tier-gold .pkg-action-btn {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  color: #0F0E09;
+  font-weight: 900;
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5);
+}
+
+.tier-gold .pkg-action-btn:hover {
+  box-shadow: 0 10px 35px rgba(255, 215, 0, 0.8);
+}
+
+/* ==========================================================================
+   DIAMOND TIER ICY SHIMMER THEME
+   ========================================================================== */
+.pkg-card-redesigned.tier-diamond {
+  border: 2px solid #70D6FF;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(112, 214, 255, 0.35);
+  background: rgba(10, 18, 25, 0.9);
+}
+
+.tier-diamond:hover {
+  border-color: #B9F2FF;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(185, 242, 255, 0.55);
+}
+
+.tier-diamond .pkg-title {
+  color: #70D6FF;
+  background: linear-gradient(135deg, #E0F7FF 0%, #70D6FF 60%, #0099FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tier-diamond .pkg-icon-halo {
+  background: rgba(112, 214, 255, 0.15);
+  border: 1px solid rgba(112, 214, 255, 0.4);
+}
+
+.tier-diamond .pkg-icon-svg {
+  color: #70D6FF;
+}
+
+.tier-diamond .check-ring {
+  background: rgba(112, 214, 255, 0.15);
+  border: 1px solid rgba(112, 214, 255, 0.4);
+}
+
+.tier-diamond .check-icon-svg {
+  color: #70D6FF;
+}
+
+.tier-diamond .pkg-duration-badge {
+  background: rgba(112, 214, 255, 0.15);
+  border: 1px solid rgba(112, 214, 255, 0.35);
+  color: #70D6FF;
+}
+
+.tier-diamond .pkg-action-btn {
+  background: linear-gradient(135deg, #70D6FF 0%, #0077B6 100%);
+  color: #FFFFFF;
+  font-weight: 900;
+  box-shadow: 0 6px 25px rgba(112, 214, 255, 0.5);
+}
+
+.tier-diamond .pkg-action-btn:hover {
+  box-shadow: 0 10px 35px rgba(112, 214, 255, 0.8);
+}
+
+/* Featured Badge */
+.pkg-featured-badge {
+  position: absolute;
+  top: -14px;
+  right: 28px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFAA00 100%);
+  color: #0A0B0E;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 5px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6);
+}
+
+.pkg-top-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pkg-icon-halo {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pkg-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.pkg-tagline {
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.pkg-duration-row {
+  margin-bottom: 24px;
+}
+
+.pkg-duration-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.pkg-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.pkg-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.check-ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pkg-action-btn {
+  width: 100%;
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.pkg-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.packages-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 14px 24px;
+  background: rgba(18, 20, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-sub);
+  text-align: center;
+}

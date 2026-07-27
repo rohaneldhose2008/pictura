@@ -1,0 +1,32 @@
+.cinematic-section {
+  padding-top: 80px;
+  padding-bottom: 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.cinematic-header {
+  margin-bottom: 20px;
+}
+
+.cinematic-gallery-viewport {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  margin-top: 10px;
+  background: transparent;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .cinematic-gallery-viewport {
+    height: 440px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cinematic-gallery-viewport {
+    height: 360px;
+  }
+}
