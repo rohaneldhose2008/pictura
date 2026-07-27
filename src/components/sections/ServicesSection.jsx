@@ -25,9 +25,9 @@ export default function ServicesSection() {
   return (
     <section id="services" className="services-section section-container dissolve-section">
       <div className="services-header text-center">
-        <div className="section-tag">OUR VISUAL SOLUTIONS</div>
+        <div className="section-tag">SERVICES</div>
         <h2 className="section-title">
-          COMPLETE CREATIVE <span className="text-orange">SERVICES</span>
+          OUR <span className="text-orange">SERVICES</span>
         </h2>
       </div>
 

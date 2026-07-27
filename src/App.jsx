@@ -115,11 +115,11 @@ export default function App() {
         {/* Section 10: Interactive Quote Request & Booking Form */}
         <BookingSection customPackageSummary={customPackageSummary} />
 
-        {/* Section 11: Frequently Asked Questions */}
-        <FaqSection onContactUs={scrollToContact} />
-
-        {/* Section 12: Contact & Australia Map */}
+        {/* Section 11: Contact & Australia Map */}
         <ContactSection />
+
+        {/* Section 12: Frequently Asked Questions (At the very end) */}
+        <FaqSection onContactUs={scrollToContact} />
       </main>
 
       {/* Section 13: Footer Section */}

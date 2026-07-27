@@ -85,9 +85,9 @@ Add-ons: ${customPackageSummary.addOns}`;
       <div className="booking-grid">
         {/* Left Info Column */}
         <div className="booking-info-col">
-          <div className="section-tag">BESPOKE BOOKING</div>
+          <div className="section-tag">BOOKING</div>
           <h2 className="section-title booking-main-title">
-            LET'S CREATE SOMETHING <span className="text-orange">AMAZING TOGETHER</span>
+            BOOK A <span className="text-orange">SESSION</span>
           </h2>
 
           <div className="booking-feature-cards">

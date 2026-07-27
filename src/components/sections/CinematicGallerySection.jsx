@@ -28,9 +28,9 @@ export default function CinematicGallerySection() {
   return (
     <section id="cinematic" className="cinematic-section section-container dissolve-section">
       <div className="cinematic-header text-center">
-        <div className="section-tag">CINEMATIC GALLERY</div>
+        <div className="section-tag">CINEMA</div>
         <h2 className="section-title">
-          CINEMATIC STORIES <span className="text-orange">THAT INSPIRE</span>
+          CINEMATIC <span className="text-orange">REEL</span>
         </h2>
       </div>
 

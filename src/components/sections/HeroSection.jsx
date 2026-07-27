@@ -58,7 +58,7 @@ export default function HeroSection({ onExplore, onBook }) {
             </div>
 
             <h1 className="hero-main-title">
-              TOWNSVILLE'S PREMIER <span className="text-orange-glow">VISUAL STORYTELLERS</span>
+              VISUAL <span className="text-orange-glow">STORYTELLERS</span>
             </h1>
 
             <p className="hero-main-subtitle">

@@ -28,10 +28,10 @@ export default function AboutSection() {
       <div className="about-grid">
         {/* Left Text Content */}
         <div className="about-text-col">
-          <div className="section-tag">OUR STORY & PHILOSOPHY</div>
+          <div className="section-tag">ABOUT US</div>
 
           <h2 className="section-title about-title">
-            CRAFTING UNFORGETTABLE VISUAL NARRATIVES ACROSS <span className="text-orange">TOWNSVILLE & BEYOND.</span>
+            OUR <span className="text-orange">PHILOSOPHY</span>
           </h2>
 
           <p className="about-description">

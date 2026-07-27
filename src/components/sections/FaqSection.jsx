@@ -45,9 +45,9 @@ export default function FaqSection({ onContactUs }) {
   return (
     <section id="faq" className="faq-section section-container dissolve-section">
       <div className="faq-header">
-        <div className="section-tag">FREQUENTLY ASKED QUESTIONS</div>
+        <div className="section-tag">QUESTIONS</div>
         <h2 className="section-title">
-          FREQUENTLY ASKED <span className="text-orange">QUESTIONS</span>
+          COMMON <span className="text-orange">QUESTIONS</span>
         </h2>
       </div>
 

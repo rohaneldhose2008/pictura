@@ -57,9 +57,9 @@ export default function PackagesSection({ onOpenCustomizer }) {
   return (
     <section id="packages" className="packages-section section-container dissolve-section">
       <div className="packages-header">
-        <div className="section-tag">OUR PACKAGES</div>
+        <div className="section-tag">PACKAGES</div>
         <h2 className="section-title">
-          BESPOKE PACKAGES <span className="text-orange">TAILORED FOR YOU</span>
+          OUR <span className="text-orange">PACKAGES</span>
         </h2>
         <p className="packages-sub-desc">
           Customize hours, crew size, drone coverage, video edits, and photo counts to craft your exact package.

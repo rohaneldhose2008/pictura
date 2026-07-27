@@ -37,9 +37,9 @@ export default function GallerySection() {
   return (
     <section id="gallery" className="gallery-section section-container dissolve-section">
       <div className="section-header text-center">
-        <div className="section-tag">CURATED EXHIBITION</div>
+        <div className="section-tag">PORTFOLIO</div>
         <h2 className="section-title">
-          CAPTURING REAL <span className="text-orange">MOMENTS</span>
+          OUR <span className="text-orange">WORK</span>
         </h2>
       </div>
 

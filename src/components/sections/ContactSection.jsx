@@ -8,9 +8,9 @@ export default function ContactSection() {
       <div className="contact-grid">
         {/* Left Column: Details */}
         <div className="contact-info-col">
-          <div className="section-tag">GET IN TOUCH</div>
+          <div className="section-tag">CONTACT</div>
           <h2 className="section-title">
-            WE'D LOVE TO HEAR <span className="text-orange">FROM YOU</span>
+            GET IN <span className="text-orange">TOUCH</span>
           </h2>
 
           <div className="contact-details-list">

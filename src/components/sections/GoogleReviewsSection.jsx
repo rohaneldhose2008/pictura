@@ -19,9 +19,9 @@ export default function GoogleReviewsSection() {
   return (
     <section id="reviews" className="google-reviews-section section-container dissolve-section">
       <div className="section-header text-center" style={{ marginBottom: '32px' }}>
-        <div className="section-tag">GOOGLE REVIEWS</div>
+        <div className="section-tag">REVIEWS</div>
         <h2 className="section-title">
-          WHAT OUR CLIENTS <span className="text-orange">SAY ABOUT US</span>
+          CLIENT <span className="text-orange">REVIEWS</span>
         </h2>
       </div>
 
