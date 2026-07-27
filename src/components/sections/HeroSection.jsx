@@ -48,11 +48,6 @@ export default function HeroSection({ onExplore, onBook }) {
       </div>
 
       <div className="hero-content-container">
-        {/* Featured Animated Master Brand Emblem */}
-        <div className="hero-brand-emblem-wrap text-center">
-          <PicturaLogo variant="full" height={80} />
-        </div>
-
         {/* Main Headline */}
         <div className="hero-text-body">
           <h1 className="hero-main-title">
