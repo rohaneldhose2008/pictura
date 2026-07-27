@@ -14,8 +14,8 @@
 .customizer-modal-box {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
+  max-width: 920px;
+  max-height: 92vh;
   background: rgba(14, 16, 21, 0.97);
   border: 1.5px solid rgba(255, 85, 0, 0.5);
   border-radius: 28px;
@@ -44,8 +44,8 @@
 }
 
 .customizer-close-btn:hover {
-  background: var(--accent-orange);
-  border-color: var(--accent-orange);
+  background: var(--accent-orange, #FF5500);
+  border-color: var(--accent-orange, #FF5500);
   transform: scale(1.1);
 }
 
@@ -58,12 +58,12 @@
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.2em;
-  color: var(--accent-orange);
+  color: var(--accent-orange, #FF5500);
   margin-bottom: 6px;
 }
 
 .customizer-title {
-  font-family: var(--font-display);
+  font-family: var(--font-display, 'Syne', sans-serif);
   font-size: 1.8rem;
   font-weight: 900;
   color: #FFFFFF;
@@ -71,29 +71,8 @@
 
 .customizer-subtitle {
   font-size: 0.88rem;
-  color: var(--text-sub);
+  color: var(--text-sub, #A0A5B5);
   margin-top: 6px;
-}
-
-.customizer-warning-banner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 85, 0, 0.2);
-  border: 1px solid var(--accent-orange);
-  border-radius: 14px;
-  padding: 10px 16px;
-  margin-top: 16px;
-  color: #FFFFFF;
-  font-size: 0.85rem;
-  font-weight: 700;
-  animation: pulse-warn 1.5s infinite;
-}
-
-@keyframes pulse-warn {
-  0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.5); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 85, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
 }
 
 .customizer-body {
@@ -110,33 +89,80 @@
 }
 
 .cust-block-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: var(--text-sub);
+  color: var(--text-sub, #A0A5B5);
 }
 
 .text-orange-req {
-  color: var(--accent-orange);
+  color: var(--accent-orange, #FF5500);
   font-weight: 800;
+}
+
+/* Services Selector Chips */
+.cust-grid-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.cust-svc-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 20, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.cust-svc-chip:hover {
+  border-color: rgba(255, 85, 0, 0.5);
+  background: rgba(255, 85, 0, 0.08);
+}
+
+.cust-svc-chip.selected {
+  background: rgba(255, 85, 0, 0.2);
+  border-color: var(--accent-orange, #FF5500);
+  box-shadow: 0 0 12px rgba(255, 85, 0, 0.35);
+}
+
+.chip-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 85, 0, 0.2);
+  border: 1px solid rgba(255, 85, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-orange, #FF5500);
 }
 
 .cust-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
-.cust-grid-2 {
+.cust-grid-5 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 }
 
 @media (max-width: 768px) {
-  .cust-grid-4, .cust-grid-2 {
-    grid-template-columns: 1fr;
+  .cust-grid-4, .cust-grid-5 {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -144,10 +170,9 @@
   background: rgba(18, 20, 28, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 14px;
+  padding: 14px 10px;
   color: #FFFFFF;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -160,7 +185,7 @@
 
 .cust-card-btn.selected {
   background: rgba(255, 85, 0, 0.2);
-  border-color: var(--accent-orange);
+  border-color: var(--accent-orange, #FF5500);
   box-shadow: 0 0 15px rgba(255, 85, 0, 0.3);
 }
 
@@ -194,7 +219,7 @@
 
 .crew-title {
   display: block;
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
   font-size: 0.88rem;
   font-weight: 800;
   color: #FFFFFF;
@@ -203,7 +228,7 @@
 .crew-sub {
   display: block;
   font-size: 0.72rem;
-  color: var(--text-sub);
+  color: var(--text-sub, #A0A5B5);
 }
 
 .counter-strip {
@@ -219,7 +244,7 @@
 .counter-strip button {
   background: transparent;
   border: none;
-  color: var(--accent-orange);
+  color: var(--accent-orange, #FF5500);
   font-size: 1.3rem;
   font-weight: 800;
   cursor: pointer;
@@ -260,7 +285,7 @@
 }
 
 .t-card.active {
-  border-color: var(--accent-orange);
+  border-color: var(--accent-orange, #FF5500);
   background: rgba(255, 85, 0, 0.12);
 }
 
@@ -278,7 +303,7 @@
 }
 
 .t-head {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
   font-size: 0.9rem;
   font-weight: 800;
   color: #FFFFFF;
@@ -286,36 +311,51 @@
 
 .t-sub {
   font-size: 0.78rem;
-  color: var(--text-sub);
+  color: var(--text-sub, #A0A5B5);
   margin-top: 3px;
   line-height: 1.4;
 }
 
-.cust-sub-group {
+.sub-option-box {
+  margin-top: 14px;
+  background: rgba(10, 11, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.cust-sub-group label {
+.sub-option-box label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text-sub);
+  color: var(--text-sub, #A0A5B5);
+  letter-spacing: 0.08em;
 }
 
-.cust-sub-group select {
-  background: rgba(10, 11, 15, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 12px;
+.radio-pills-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill-radio-btn {
+  background: rgba(18, 20, 28, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 8px 16px;
   color: #FFFFFF;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  outline: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.cust-sub-group select:focus {
-  border-color: var(--accent-orange);
+.pill-radio-btn.active {
+  background: var(--accent-orange, #FF5500);
+  border-color: var(--accent-orange, #FF5500);
+  box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
 }
 
 .customizer-footer {

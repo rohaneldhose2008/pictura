@@ -18,12 +18,12 @@ export default function BookingSection({ customPackageSummary }) {
     if (customPackageSummary) {
       const summaryText = `[BESPOKE PACKAGE CUSTOMIZATION]
 Package Tier: ${customPackageSummary.tier}
-Event Category: ${customPackageSummary.eventType || 'N/A'}
+Selected Services: ${customPackageSummary.services || 'Photography, Videography'}
 Duration: ${customPackageSummary.duration}
 Crew Size: ${customPackageSummary.crew}
-Video Deliverables: ${customPackageSummary.videoEdits}
 Photo Deliverables: ${customPackageSummary.photoDeliverables}
-Broadcast Upgrades: ${customPackageSummary.upgrades}`;
+Video Deliverables: ${customPackageSummary.videoEdits}
+Add-ons & Deliverables: ${customPackageSummary.addOns}`;
 
       setFormData((prev) => ({
         ...prev,
@@ -52,7 +52,7 @@ Broadcast Upgrades: ${customPackageSummary.upgrades}`;
       `📅 Date: ${formData.date}\n\n` +
       `*DETAILS:*\n${formData.message}`
     );
-    window.open(`https://wa.me/61412345678?text=${text}`, '_blank');
+    window.open(`https://wa.me/61455974240?text=${text}`, '_blank');
   };
 
   return (
@@ -81,8 +81,8 @@ Broadcast Upgrades: ${customPackageSummary.upgrades}`;
                 <MapPin size={20} className="text-orange" />
               </div>
               <div>
-                <h4 className="b-feat-title">Brisbane, Queensland HQ</h4>
-                <p className="b-feat-desc">Commissions across Australia & destination events</p>
+                <h4 className="b-feat-title">Townsville, Queensland HQ</h4>
+                <p className="b-feat-desc">Commissions across Queensland & Australia wide</p>
               </div>
             </div>
 
