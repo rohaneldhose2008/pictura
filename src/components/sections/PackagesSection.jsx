@@ -6,16 +6,14 @@ const PACKAGES_DATA = [
     id: 'starter',
     name: 'SILVER PACKAGE',
     tierClass: 'tier-silver',
-    tagline: 'Customizable intimate event & portrait session',
-    duration: '2-3 Hours Coverage (Customizable)',
+    tagline: 'Basic essential coverage for intimate events',
+    duration: '2 Hours Coverage',
     icon: Camera,
     features: [
-      '2-3 Hours On-Site Coverage (Adjustable)',
-      '0 Photographers, 1 Videographer (Default)',
-      '20+ Retouched High-Res Photos',
-      'Custom Video Edits (Addable/Deletable)',
-      'No Physical Album (Digital Only)',
-      'Custom Crew & Equipment Upgrades'
+      '2 Hours Basic Coverage',
+      '1 Photographer, 0 Video',
+      '30 Retouched High-Res Photos',
+      'Digital Copy Only'
     ],
     isFeatured: false
   },
@@ -23,16 +21,15 @@ const PACKAGES_DATA = [
     id: 'professional',
     name: 'GOLD PACKAGE',
     tierClass: 'tier-gold',
-    tagline: 'Customizable photo & cinema video experience',
-    duration: '4-6 Hours Master Production (Customizable)',
+    tagline: 'Comprehensive photo & highlight video experience',
+    duration: '4-6 Hours Coverage',
     icon: Video,
     features: [
-      '4-6 Hours Coverage (Adjustable)',
-      '1 Photographer, 1 Videographer Included',
-      '50+ Retouched High-Res Photos',
-      '3-5 Min Cinematic Highlight Reel Included',
-      '15-20 Min Extended Feature Film (Optional)',
-      '4K Multi-Cam Live Streaming (Addable)'
+      '4-6 Hours Coverage',
+      '1 Photographer, 1 Videographer',
+      '60 Retouched High-Res Photos',
+      '3-5 Min Highlight Video (Vertical or Horizontal)',
+      'Digital Copy Included'
     ],
     isFeatured: true,
     badge: 'MOST POPULAR'
@@ -41,16 +38,16 @@ const PACKAGES_DATA = [
     id: 'enterprise',
     name: 'DIAMOND PACKAGE',
     tierClass: 'tier-diamond',
-    tagline: 'Full day royal production & multi-cam live stream',
-    duration: '8-10 Hours Master Commission (Customizable)',
+    tagline: 'Complete master production with drone cinema & USB',
+    duration: '8-10 Hours Coverage',
     icon: Crown,
     features: [
-      '8-10 Hours Full-Day Coverage (Adjustable)',
-      '2 Photographers, 1 Videographer, 1 Drone Pilot',
-      '800+ Master Retouched Photos',
-      '3-5 Min Highlight + 15-20 Min Feature Film',
-      '1 Italian Leather Hardcover Album Included',
-      '4K Multi-Camera Live Stream Included'
+      '8-10 Hours Coverage',
+      '2 Photographers, 1 Videographer + Drone',
+      '200 Retouched High-Res Photos',
+      'Highlight Video x 2',
+      'Custom USB Drive Included',
+      'Optional Add-ons: Live Photobooth, AI QR Code, Album'
     ],
     isFeatured: false
   }

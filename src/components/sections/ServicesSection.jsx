@@ -2,15 +2,16 @@ import CircularGallery from '../CircularGallery';
 import './ServicesSection.css';
 
 const FLYING_SERVICES = [
-  { image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', text: 'EVENT PHOTOGRAPHY' },
-  { image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop', text: 'CORPORATE PHOTOGRAPHY' },
-  { image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1200&auto=format&fit=crop', text: 'DRONE AERIAL CINEMA' },
-  { image: 'https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?q=80&w=1200&auto=format&fit=crop', text: 'LIVE STREAM BROADCAST' },
-  { image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop', text: 'VIDEOGRAPHY & CINEMA' },
-  { image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop', text: 'CANDID & PORTRAITS' },
-  { image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop', text: 'FASHION & EDITORIAL' },
-  { image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop', text: 'COMMERCIAL PRODUCT' },
-  { image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop', text: 'SOCIAL VIRAL REELS' }
+  { image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop', text: 'PHOTOGRAPHY' },
+  { image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop', text: 'VIDEOGRAPHY' },
+  { image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1200&auto=format&fit=crop', text: 'DRONE CINEMA' },
+  { image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop', text: 'CORPORATE' },
+  { image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop', text: 'ADVERTISING' },
+  { image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop', text: 'SHORT FILM' },
+  { image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', text: 'FUNCTIONS' },
+  { image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop', text: 'EVENTS' },
+  { image: 'https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?q=80&w=1200&auto=format&fit=crop', text: 'LIVE BROADCAST' },
+  { image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop', text: 'REALESTATE PHOTOGRAPHY' }
 ];
 
 export default function ServicesSection() {

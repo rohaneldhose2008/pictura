@@ -37,8 +37,8 @@ export default function FooterSection() {
             </a>
 
             <p className="footer-tagline">
-              Capturing stories. Creating experiences.<br />
-              Every detail. Every emotion.
+              We Don't Just Click. We Create Stories.<br />
+              Turning your precious moments into timeless cinematic memories.
             </p>
           </div>
 

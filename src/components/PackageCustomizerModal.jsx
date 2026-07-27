@@ -35,16 +35,15 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
 
   // Photo Count Defaults
   const [photoCount, setPhotoCount] = useState(
-    isRoyal ? '800+ Retouched Photos' : isProfessional ? '50+ Retouched Photos' : '20+ Retouched Photos'
+    isRoyal ? '200 Retouched High-Res Photos' : isProfessional ? '60 Retouched High-Res Photos' : '30 Retouched High-Res Photos'
   );
 
-  // Album Defaults
-  const [leatherAlbums, setLeatherAlbums] = useState(
-    isRoyal ? '1 Italian Leather Hardcover Album' : 'No Physical Album (Digital Only)'
-  );
-
-  // Broadcast Live Stream Defaults
-  const [liveStream, setLiveStream] = useState(isRoyal);
+  // Add-ons & Extra Toggles
+  const [livePhotobooth, setLivePhotobooth] = useState(false);
+  const [aiQrSharing, setAiQrSharing] = useState(false);
+  const [customUsb, setCustomUsb] = useState(isRoyal);
+  const [printedAlbum, setPrintedAlbum] = useState(false);
+  const [liveStream, setLiveStream] = useState(false);
 
   const requireCategoryCheck = (actionFn) => {
     if (!eventType) {
@@ -77,8 +76,14 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
         sameDayEdit ? 'Same-Day Edited Reel' : null,
         rawFootageDrive ? 'Uncut 4K Raw Footage SSD Drive' : null
       ].filter(Boolean).join(', ') || 'No Video Edits Selected',
-      photoDeliverables: `${photoCount}, ${leatherAlbums}`,
-      upgrades: liveStream ? '4K Multi-Cam Live Stream Broadcast' : 'Standard Cinema Production'
+      photoDeliverables: `${photoCount}`,
+      upgrades: [
+        livePhotobooth ? 'Live Photobooth Station' : null,
+        aiQrSharing ? 'AI Instant QR Code Guest Sharing' : null,
+        customUsb ? 'Custom Engraved USB Flash Drive' : null,
+        printedAlbum ? 'Hardcover Printed Album' : null,
+        liveStream ? '4K Multi-Cam Live Stream Broadcast' : null
+      ].filter(Boolean).join(', ') || 'Standard Digital Delivery'
     };
 
     if (onApplyCustomization) {
