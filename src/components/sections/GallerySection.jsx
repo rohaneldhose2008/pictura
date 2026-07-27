@@ -1,4 +1,5 @@
 import DomeGallery from '../DomeGallery';
+import { getAssetUrl } from '../../utils/assetUrl';
 import './GallerySection.css';
 
 const SUSMI_PETTER_FILES = [
@@ -15,7 +16,7 @@ const SUSMI_PETTER_FILES = [
 ];
 
 const GALLERY_IMAGES = SUSMI_PETTER_FILES.map((fileName) => ({
-  src: `./images/susmi-petter/${fileName}`,
+  src: getAssetUrl(`images/susmi-petter/${fileName}`),
   alt: `Susmi & Petter Celebration - ${fileName}`
 }));
 
