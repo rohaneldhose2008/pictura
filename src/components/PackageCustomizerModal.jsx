@@ -45,7 +45,7 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
 
   // Cinematic Video Edits
   const [highlightFilm, setHighlightFilm] = useState(!isStarter);
-  const [highlightOrientation, setHighlightOrientation] = useState('Horizontal & Vertical (Both)');
+  const [highlightOrientation, setHighlightOrientation] = useState('Horizontal (16:9 Cinema)');
   const [extendedFeature, setExtendedFeature] = useState(isDiamond);
   const [sameDayEdit, setSameDayEdit] = useState(false);
   const [rawFootageDrive, setRawFootageDrive] = useState(isDiamond);
@@ -275,7 +275,7 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
               <div className="sub-option-box">
                 <label>Highlight Reel Format Preference:</label>
                 <div className="radio-pills-row">
-                  {['Vertical (Instagram/Reels)', 'Horizontal (16:9 Cinema)', 'Horizontal & Vertical (Both)'].map((fmt) => (
+                  {['Horizontal (16:9 Cinema)', 'Vertical (Instagram/Reels)', 'Horizontal & Vertical (Both)'].map((fmt) => (
                     <button
                       key={fmt}
                       type="button"

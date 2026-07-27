@@ -1,8 +1,12 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Clock, Layers, Sparkles } from 'lucide-react';
 import BusinessCard3D from '../BusinessCard3D';
+import Lanyard from '../Lanyard';
 import './ContactSection.css';
 
 export default function ContactSection() {
+  const [activeView, setActiveView] = useState('card');
+
   return (
     <section id="contact" className="contact-section section-container dissolve-section">
       <div className="contact-grid">
@@ -66,9 +70,33 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right Column: 3D Interactive Flippable Social Media ID Card */}
+        {/* Right Column: 3D View Switcher (Flippable Card or 3D Physics Lanyard) */}
         <div className="contact-map-col">
-          <BusinessCard3D />
+          <div className="view-mode-toggle-bar">
+            <button
+              type="button"
+              className={`view-mode-btn ${activeView === 'card' ? 'active' : ''}`}
+              onClick={() => setActiveView('card')}
+            >
+              <Layers size={14} />
+              <span>3D FLIPPABLE SOCIAL PASS</span>
+            </button>
+
+            <button
+              type="button"
+              className={`view-mode-btn ${activeView === 'lanyard' ? 'active' : ''}`}
+              onClick={() => setActiveView('lanyard')}
+            >
+              <Sparkles size={14} />
+              <span>3D PHYSICS LANYARD</span>
+            </button>
+          </div>
+
+          {activeView === 'card' ? (
+            <BusinessCard3D />
+          ) : (
+            <Lanyard position={[0, 0, 22]} gravity={[0, -40, 0]} frontImage="./pictura-flyer.jpg" backImage="./pictura-flyer.jpg" />
+          )}
         </div>
       </div>
     </section>
