@@ -135,7 +135,7 @@ function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif', textPosition = 'bottom' }) {
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif', textPosition = 'bottom', bend = 0 }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -144,6 +144,7 @@ class Title {
     this.textColor = textColor;
     this.font = font;
     this.textPosition = textPosition;
+    this.bend = bend;
     this.createMesh();
   }
   createMesh() {
@@ -179,11 +180,12 @@ class Title {
     const textHeight = this.plane.scale.y * 0.15;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    if (this.textPosition === 'top') {
-      this.mesh.position.y = this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.05;
-    } else {
-      this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
-    }
+    
+    // Account for inverted 3D plane orientation when bend is negative (< 0)
+    const isTop = this.textPosition === 'top';
+    const directionSign = (this.bend < 0) ? (isTop ? -1 : 1) : (isTop ? 1 : -1);
+    this.mesh.position.y = directionSign * (this.plane.scale.y * 0.5 + textHeight * 0.5 + 0.08);
+    
     this.mesh.setParent(this.plane);
   }
 }
@@ -314,7 +316,8 @@ class Media {
       text: this.text,
       textColor: this.textColor,
       font: this.font,
-      textPosition: this.textPosition
+      textPosition: this.textPosition,
+      bend: this.bend
     });
   }
   update(scroll, direction) {
