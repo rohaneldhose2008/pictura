@@ -50,10 +50,6 @@ export default function HeroSection({ onExplore, onBook }) {
       <div className="hero-content-container">
         {/* Main Headline Body */}
         <div className="hero-text-body">
-          <div className="hero-location-chip" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '20px', background: 'rgba(255, 85, 0, 0.15)', border: '1px solid rgba(255, 85, 0, 0.35)', marginBottom: '20px', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.18em', color: '#FF5500' }}>
-            <span>ESTABLISHED 2020 • TOWNSVILLE, QUEENSLAND</span>
-          </div>
-
           <h1 className="hero-main-title">
             VISUAL <span className="text-orange-glow">STORYTELLERS</span>
           </h1>
