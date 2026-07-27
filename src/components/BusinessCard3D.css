@@ -139,3 +139,35 @@
   opacity: 1;
   transform: translate(2px, -2px);
 }
+
+@media (max-width: 768px) {
+  .card-face {
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+
+  .card-tagline-strip {
+    font-size: 0.62rem;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .card-social-grid {
+    gap: 8px;
+  }
+
+  .card-social-item {
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .c-soc-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .c-soc-value {
+    font-size: 0.78rem;
+  }
+}

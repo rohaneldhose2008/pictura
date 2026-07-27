@@ -6,7 +6,7 @@ import ServicesSection from './components/sections/ServicesSection';
 import GallerySection from './components/sections/GallerySection';
 import CinematicGallerySection from './components/sections/CinematicGallerySection';
 import PackagesSection from './components/sections/PackagesSection';
-import ReviewsSection from './components/sections/ReviewsSection';
+import GoogleReviewsSection from './components/sections/GoogleReviewsSection';
 import BookingSection from './components/sections/BookingSection';
 import FaqSection from './components/sections/FaqSection';
 import ContactSection from './components/sections/ContactSection';
@@ -109,8 +109,8 @@ export default function App() {
         {/* Section 08: Bespoke Packages Section */}
         <PackagesSection onOpenCustomizer={handleOpenCustomizer} />
 
-        {/* Section 09: Client Reviews & Testimonials */}
-        <ReviewsSection />
+        {/* Section 09: Verified Google Client Reviews */}
+        <GoogleReviewsSection />
 
         {/* Section 10: Interactive Quote Request & Booking Form */}
         <BookingSection customPackageSummary={customPackageSummary} />
