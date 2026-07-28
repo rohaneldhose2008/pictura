@@ -2,10 +2,15 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const dir = path.join(process.cwd(), 'public', 'images', 'susmi-petter');
+const dir = path.join(process.cwd(), 'public', 'images', 'Website');
 
 async function compressAll() {
-  const files = fs.readdirSync(dir).filter(f => f.endsWith('.jpg') || f.endsWith('.png'));
+  if (!fs.existsSync(dir)) {
+    console.error(`Directory does not exist: ${dir}`);
+    return;
+  }
+
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.jpg') || f.endsWith('.jpeg') || f.endsWith('.png'));
   console.log(`Compressing ${files.length} images in ${dir}...`);
   
   let totalSaved = 0;
@@ -13,7 +18,7 @@ async function compressAll() {
   for (const file of files) {
     const filePath = path.join(dir, file);
     const statsBefore = fs.statSync(filePath);
-    if (statsBefore.size === 0) continue; // Skip broken 0-byte file
+    if (statsBefore.size === 0) continue;
 
     const tempPath = path.join(dir, `_temp_${file}`);
 
