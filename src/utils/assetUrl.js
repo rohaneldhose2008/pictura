@@ -1,5 +1,5 @@
 /**
- * Bulletproof asset URL resolver for local dev, GitHub Pages, and custom domains
+ * Bulletproof asset URL resolver for local dev, GitHub Pages, and custom domain pictura.au
  */
 export const getAssetUrl = (path) => {
   if (!path) return '';
@@ -7,11 +7,7 @@ export const getAssetUrl = (path) => {
   
   const cleanPath = path.startsWith('./') ? path.slice(2) : path.startsWith('/') ? path.slice(1) : path;
   
-  // Check if running on GitHub Pages (github.io domain)
-  if (typeof window !== 'undefined' && window.location.hostname.includes('github.io')) {
-    return `/pictura/${cleanPath}`;
-  }
-  
+  // Custom Domain pictura.au or Localhost Root
   const base = import.meta.env.BASE_URL || '/';
   const cleanBase = base.endsWith('/') ? base : `${base}/`;
   return `${cleanBase}${cleanPath}`;
