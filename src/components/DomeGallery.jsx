@@ -71,11 +71,35 @@ function buildItems(pool, seg) {
     return { src: image.src || '', alt: image.alt || '' };
   });
 
-  return coords.map((c, i) => {
-    // 2D Spatial GLSL Pseudo-Random Noise Hash for 100% non-periodic tile distribution
+  const placedMap = new Map();
+  return coords.map(c => {
     const rawHash = Math.sin(c.x * 12.9898 + c.y * 78.233 + (c.x * c.y * 0.013)) * 43758.5453;
-    const hashIndex = Math.floor(Math.abs(rawHash)) % normalizedImages.length;
-    const item = normalizedImages[hashIndex];
+    let baseIndex = Math.floor(Math.abs(rawHash)) % normalizedImages.length;
+
+    // Neighbor positions (Left, Top, Diagonals) to avoid repeating nearby photos
+    const neighborKeys = [
+      `${c.x - 2},${c.y}`,
+      `${c.x},${c.y - 2}`,
+      `${c.x},${c.y - 1}`,
+      `${c.x},${c.y + 1}`,
+      `${c.x - 2},${c.y - 1}`,
+      `${c.x - 2},${c.y + 1}`
+    ];
+
+    const neighborSrcs = new Set(
+      neighborKeys.map(k => placedMap.get(k)).filter(Boolean)
+    );
+
+    let selectedIndex = baseIndex;
+    let attempts = 0;
+    while (neighborSrcs.has(normalizedImages[selectedIndex].src) && attempts < normalizedImages.length) {
+      selectedIndex = (selectedIndex + 1) % normalizedImages.length;
+      attempts++;
+    }
+
+    const item = normalizedImages[selectedIndex];
+    placedMap.set(`${c.x},${c.y}`, item.src);
+
     return {
       ...c,
       src: item.src,
