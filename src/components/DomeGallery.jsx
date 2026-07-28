@@ -71,26 +71,16 @@ function buildItems(pool, seg) {
     return { src: image.src || '', alt: image.alt || '' };
   });
 
-  const usedImages = Array.from({ length: totalSlots }, (_, i) => normalizedImages[i % normalizedImages.length]);
-
-  for (let i = 1; i < usedImages.length; i++) {
-    if (usedImages[i].src === usedImages[i - 1].src) {
-      for (let j = i + 1; j < usedImages.length; j++) {
-        if (usedImages[j].src !== usedImages[i].src) {
-          const tmp = usedImages[i];
-          usedImages[i] = usedImages[j];
-          usedImages[j] = tmp;
-          break;
-        }
-      }
-    }
-  }
-
-  return coords.map((c, i) => ({
-    ...c,
-    src: usedImages[i].src,
-    alt: usedImages[i].alt
-  }));
+  return coords.map((c, i) => {
+    // Prime-scattered distribution so adjacent horizontal, vertical, and diagonal tiles are randomly misplaced
+    const primeIndex = (i * 7 + Math.abs(c.x * 13 + c.y * 19)) % normalizedImages.length;
+    const item = normalizedImages[primeIndex];
+    return {
+      ...c,
+      src: item.src,
+      alt: item.alt
+    };
+  });
 }
 
 function computeItemBaseRotation(offsetX, offsetY, sizeX, sizeY, segments) {
