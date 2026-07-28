@@ -112,7 +112,32 @@ export default function FooterSection() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="footer-bottom-bar">
+        <div className="footer-bottom-bar" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+          <a
+            href="https://wa.me/919037352739?text=Hello!%20I%20saw%20your%20work%20on%20pictura.au%20and%20would%20like%20to%20connect."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="meet-developer-btn"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              color: '#FF5500',
+              fontWeight: 800,
+              fontSize: '0.82rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              padding: '6px 18px',
+              borderRadius: '20px',
+              background: 'rgba(255, 85, 0, 0.12)',
+              border: '1px solid rgba(255, 85, 0, 0.4)',
+              boxShadow: '0 0 14px rgba(255, 85, 0, 0.2)',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            ⚡ MEET THE DEVELOPER
+          </a>
           <p>© 2026 Pictura Creations. All Rights Reserved. Every Detail. Every Emotion.</p>
         </div>
       </div>
