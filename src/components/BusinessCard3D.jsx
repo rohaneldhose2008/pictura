@@ -99,7 +99,7 @@ export default function BusinessCard3D() {
             </a>
 
             <a
-              href="https://wa.me/61455974240"
+              href="https://wa.me/61477240625"
               target="_blank"
               rel="noopener noreferrer"
               className="card-social-item"

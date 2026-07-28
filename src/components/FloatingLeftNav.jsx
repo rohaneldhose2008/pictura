@@ -44,13 +44,13 @@ export default function FloatingLeftNav({ activePageIndex, onPageChange }) {
 
           <div className="top-brand-actions">
             <a
-              href="https://wa.me/919446802570?text=Hello%20Pictura%20Studio!%20I'd%20like%20to%20inquire%20about%20booking%20a%20shoot."
+              href="https://wa.me/61477240625?text=Hello%20Pictura%20Studio!%20I'd%20like%20to%20inquire%20about%20booking%20a%20shoot."
               target="_blank"
               rel="noreferrer"
               className="header-whatsapp-btn"
             >
               <MessageSquare size={14} />
-              <span>WHATSAPP (+91 94468)</span>
+              <span>WHATSAPP (+61 477 240 625)</span>
             </a>
 
             <button className="header-book-btn" onClick={() => onPageChange(5)}>

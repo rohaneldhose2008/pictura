@@ -12,8 +12,9 @@ export default function BookingSection({ customPackageSummary }) {
     name: '',
     email: '',
     phone: '',
-    service: 'Photography',
+    service: '',
     date: '',
+    budget: '',
     location: 'Townsville, QLD',
     message: ''
   });
@@ -22,7 +23,7 @@ export default function BookingSection({ customPackageSummary }) {
     if (customPackageSummary) {
       const summaryText = `[BESPOKE PACKAGE CUSTOMIZATION]
 Package Tier: ${customPackageSummary.tier}
-Selected Services: ${customPackageSummary.services || 'Photography, Videography'}
+Selected Services: ${customPackageSummary.services || 'Photography, Cinematography'}
 Duration: ${customPackageSummary.duration}
 Crew Size: ${customPackageSummary.crew}
 Photo Deliverables: ${customPackageSummary.photoDeliverables}
@@ -41,6 +42,14 @@ Add-ons: ${customPackageSummary.addOns}`;
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const scrollToPackages = (e) => {
+    e.preventDefault();
+    const el = document.getElementById('packages');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -53,11 +62,11 @@ Add-ons: ${customPackageSummary.addOns}`;
       clientEmail: formData.email,
       eventDate: formData.date || 'To Be Scheduled',
       eventLocation: formData.location || 'Townsville, QLD',
-      packageTitle: customPackageSummary?.tier || formData.service || 'Gold Package',
-      duration: customPackageSummary?.duration || '4-6 Hours',
-      crewText: customPackageSummary?.crew || '1 Photographer + 1 Videographer',
-      photoCount: customPackageSummary?.photoDeliverables || '60 Retouched Photos',
-      highlightFormat: customPackageSummary?.videoEdits || 'Horizontal (16:9 Cinema)',
+      packageTitle: customPackageSummary?.tier || formData.service || 'Bespoke Selection',
+      duration: customPackageSummary?.duration || 'Standard Session',
+      crewText: customPackageSummary?.crew || '1 Photographer + 1 Cinematographer',
+      photoCount: customPackageSummary?.photoDeliverables || 'Retouched Photos Included',
+      highlightFormat: customPackageSummary?.videoEdits || 'Cinematic Film',
       addons: customPackageSummary?.addOns ? [customPackageSummary.addOns] : [],
       notes: formData.message
     };
@@ -68,15 +77,20 @@ Add-ons: ${customPackageSummary.addOns}`;
 
   const handleSendWhatsAppNotification = () => {
     const text = encodeURIComponent(
-      `*NEW QUOTE REQUEST - PICTURA CREATIONS*\n` +
-      `👤 Name: ${formData.name}\n` +
-      `📧 Email: ${formData.email}\n` +
-      `📞 Phone: ${formData.phone}\n` +
-      `📍 Location: ${formData.location}\n` +
-      `📅 Date: ${formData.date}\n\n` +
-      `*DETAILS:*\n${formData.message}`
+      `📸 *PICTURA CREATIONS - BOOKING REQUEST*\n` +
+      `────────────────────────\n` +
+      `👤 *Name:* ${formData.name}\n` +
+      `📞 *Phone:* ${formData.phone}\n` +
+      `✉️ *Email:* ${formData.email}\n` +
+      `📅 *Event Date:* ${formData.date}\n` +
+      `📍 *Location:* ${formData.location || 'Townsville, QLD'}\n` +
+      (formData.service ? `📌 *Selected Package:* ${formData.service}\n` : '') +
+      (formData.budget ? `💰 *Budget Preference:* ${formData.budget}\n` : '') +
+      (formData.message ? `📝 *Notes:* ${formData.message}\n` : '') +
+      `────────────────────────\n` +
+      `https://pictura.au`
     );
-    window.open(`https://wa.me/61455974240?text=${text}`, '_blank');
+    window.open(`https://wa.me/61477240625?text=${text}`, '_blank');
   };
 
   return (
@@ -177,18 +191,20 @@ Add-ons: ${customPackageSummary.addOns}`;
 
                 <div className="form-row">
                   <div className="input-group">
-                    <label>Phone Number</label>
+                    <label>Phone Number *</label>
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="+61 400 000 000"
+                      placeholder="+61 477 240 625"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
                     <label>Service Category</label>
                     <select name="service" value={formData.service} onChange={handleChange}>
+                      <option value="">-- Choose a Service --</option>
                       <option value="Photography">Event Photography</option>
                       <option value="Cinematography">Cinematography</option>
                       <option value="Drone">Drone Aerial Shoot</option>
@@ -196,36 +212,68 @@ Add-ons: ${customPackageSummary.addOns}`;
                       <option value="Corporate">Corporate Package</option>
                       <option value="Bespoke Package">Bespoke Custom Package</option>
                     </select>
+                    <p style={{ fontSize: '0.78rem', marginTop: '6px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                      Please select your package from{' '}
+                      <button
+                        type="button"
+                        onClick={scrollToPackages}
+                        style={{
+                          color: '#FF5500',
+                          fontWeight: 'bold',
+                          textDecoration: 'underline',
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          padding: 0,
+                          fontSize: 'inherit'
+                        }}
+                      >
+                        our packages
+                      </button>
+                    </p>
                   </div>
                 </div>
 
                 <div className="form-row">
                   <div className="input-group">
-                    <label>Event Date</label>
+                    <label>Event Date *</label>
                     <input
                       type="date"
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
-                    <label>Location / City</label>
-                    <input
-                      type="text"
-                      name="location"
-                      placeholder="Townsville, QLD"
-                      value={formData.location}
-                      onChange={handleChange}
-                    />
+                    <label>Select Your Budget (Optional)</label>
+                    <select name="budget" value={formData.budget} onChange={handleChange}>
+                      <option value="">-- Choose Budget Range (Optional) --</option>
+                      <option value="Under $1,500 AUD">Under $1,500 AUD</option>
+                      <option value="$1,500 - $3,000 AUD">$1,500 - $3,000 AUD</option>
+                      <option value="$3,000 - $5,000 AUD">$3,000 - $5,000 AUD</option>
+                      <option value="$5,000+ AUD">$5,000+ AUD</option>
+                      <option value="Flexible / To Be Discussed">Flexible / To Be Discussed</option>
+                    </select>
                   </div>
+                </div>
+
+                <div className="input-group">
+                  <label>Location / City</label>
+                  <input
+                    type="text"
+                    name="location"
+                    placeholder="Townsville, QLD"
+                    value={formData.location}
+                    onChange={handleChange}
+                  />
                 </div>
 
                 <div className="input-group">
                   <label>Customized Project Details & Parameters</label>
                   <textarea
                     name="message"
-                    rows="5"
+                    rows="4"
                     placeholder="Describe event scope, venue, style preferences, or custom parameters..."
                     value={formData.message}
                     onChange={handleChange}

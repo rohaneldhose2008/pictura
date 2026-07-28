@@ -48,7 +48,7 @@ ${addons.length > 0 ? `• *Add-ons:* ${addons.join(', ')}\n` : ''}────�
 Thank you for choosing Pictura Creations! We look forward to capturing your visual story.`;
 
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/61455974240?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/61477240625?text=${encoded}`, '_blank');
   };
 
   const handlePrint = () => {

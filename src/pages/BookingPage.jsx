@@ -208,7 +208,7 @@ export default function BookingPage() {
 
               <div className="direct-whatsapp-box margin-top-20">
                 <a
-                  href={`https://wa.me/919446802570?text=${whatsappMessage}`}
+                  href={`https://wa.me/61477240625?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noreferrer"
                   className="whatsapp-direct-btn"
@@ -240,13 +240,13 @@ export default function BookingPage() {
 
           <div className="actions-row margin-top-20">
             <a
-              href={`https://wa.me/919446802570?text=${whatsappMessage}`}
+              href={`https://wa.me/61477240625?text=${whatsappMessage}`}
               target="_blank"
               rel="noreferrer"
               className="cta-primary-btn"
             >
               <MessageSquare size={18} />
-              <span>CHAT ON WHATSAPP (+91 94468 02570)</span>
+              <span>CHAT ON WHATSAPP (+61 477 240 625)</span>
             </a>
             <button className="cta-secondary-btn" onClick={() => setSubmitted(false)}>
               <span>Submit Another Inquiry</span>
