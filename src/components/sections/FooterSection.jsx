@@ -136,7 +136,7 @@ export default function FooterSection() {
               transition: 'all 0.3s ease'
             }}
           >
-            ⚡ MEET THE DEVELOPER
+            MEET THE DEVELOPER
           </a>
           <p>© 2026 Pictura Creations. All Rights Reserved. Every Detail. Every Emotion.</p>
         </div>
