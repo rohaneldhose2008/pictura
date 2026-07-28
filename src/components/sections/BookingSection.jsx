@@ -77,6 +77,32 @@ Add-ons: ${customPackageSummary.addOns}`;
     setReceiptData(generatedReceipt);
     setShowReceipt(true);
 
+    // Submit lead directly to Google Sheets API
+    const GOOGLE_SHEETS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5gc0lQyn9CrhcYyiT2puWVKgVhvLL0GQumKzZRAWfQrMHiF1r6kRosRriWOfQW8Y_/exec';
+    
+    try {
+      fetch(GOOGLE_SHEETS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          receiptId,
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          date: formData.date,
+          budget: formData.budget,
+          location: formData.location,
+          service: customPackageSummary?.tier || formData.service || 'Bespoke Selection',
+          message: formData.message
+        })
+      }).catch((err) => console.log('Google Sheets sync:', err));
+    } catch (e) {
+      console.log('Google Sheets post error:', e);
+    }
+
     // Formatted Receipt text for WhatsApp
     const receiptText =
       `🧾 *PICTURA CREATIONS - OFFICIAL BOOKING RECEIPT*\n` +
