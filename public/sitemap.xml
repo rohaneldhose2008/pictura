@@ -1,86 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Main Home Page -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pictura.au/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- About Us Section -->
-  <url>
-    <loc>https://pictura.au/#about</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Production Services Section -->
-  <url>
-    <loc>https://pictura.au/#services</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  
-  <!-- Portfolio & Exhibition Gallery -->
-  <url>
-    <loc>https://pictura.au/#gallery</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <!-- Cinematic Stories Showcase -->
-  <url>
-    <loc>https://pictura.au/#cinematic</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <!-- Bespoke Packages & Pricing -->
-  <url>
-    <loc>https://pictura.au/#packages</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Google Reviews & Testimonials -->
-  <url>
-    <loc>https://pictura.au/#reviews</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Booking & Consultation -->
-  <url>
-    <loc>https://pictura.au/#booking</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Studio Contact & Location -->
-  <url>
-    <loc>https://pictura.au/#contact</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Frequently Asked Questions -->
-  <url>
-    <loc>https://pictura.au/#faq</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
