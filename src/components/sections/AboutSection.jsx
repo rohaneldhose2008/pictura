@@ -62,7 +62,7 @@ export default function AboutSection() {
         
         {/* Local SEO Location Badges */}
         <div className="seo-location-chips-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '28px' }}>
-          {['TOWNSVILLE, QLD', 'MAGNETIC ISLAND', 'BURDEKIN', 'CHARTERS TOWERS', 'WHITSUNDAYS', 'NORTH QUEENSLAND'].map((loc, i) => (
+          {['TOWNSVILLE', 'CAIRNS', 'CHARTERS TOWERS', 'MACKAY', 'BRISBANE', 'MAGNETIC ISLAND'].map((loc, i) => (
             <span key={i} style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.85)', background: 'rgba(255, 85, 0, 0.12)', border: '1px solid rgba(255, 85, 0, 0.3)', padding: '5px 14px', borderRadius: '20px' }}>
               📍 {loc}
             </span>
