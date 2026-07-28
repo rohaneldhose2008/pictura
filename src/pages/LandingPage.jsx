@@ -85,7 +85,7 @@ export default function LandingPage({ onNavigate }) {
               <ArrowRight size={18} />
             </button>
             <button className="cta-secondary-btn cta-secondary-btn--glass" onClick={() => onNavigate(5)}>
-              <span>CALCULATE ESTIMATE</span>
+              <span>BOOK SESSION</span>
             </button>
             <button className="cta-showreel-btn" onClick={() => setShowVideoModal(true)}>
               <Play size={16} fill="#FF5500" className="text-orange" />

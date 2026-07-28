@@ -6,19 +6,19 @@ import { Calendar, CheckCircle2, Calculator, Sparkles, MessageSquare, ArrowRight
 import './BookingPage.css';
 
 const PACKAGES_PRICING = [
-  { name: 'Royal Heritage Wedding', basePrice: 450000 },
-  { name: 'Cinematic Pre-Wedding Luxe', basePrice: 175000 },
-  { name: 'Brand Visionary Campaign', basePrice: 285000 },
-  { name: '4K Multi-Cam Broadcast', basePrice: 220000 },
-  { name: 'Architectural Estate Showcase', basePrice: 145000 }
+  { name: 'Royal Heritage Wedding' },
+  { name: 'Cinematic Pre-Wedding Luxe' },
+  { name: 'Brand Visionary Campaign' },
+  { name: '4K Multi-Cam Broadcast' },
+  { name: 'Architectural Estate Showcase' }
 ];
 
 const ADDONS_LIST = [
-  { id: 'drone', name: '8K Heavy-Lift FPV Drone Aerials', price: 45000 },
-  { id: 'livestream', name: '4K Multi-Platform Live Broadcast Feed', price: 65000 },
-  { id: 'album', name: 'Italian Handcrafted Leather Album (50 Pgs)', price: 35000 },
-  { id: 'sameday', name: '24-Hour Express Social Media Teaser', price: 25000 },
-  { id: 'raw', name: 'Full Uncompressed RAW Masters Drive', price: 30000 }
+  { id: 'drone', name: '8K Heavy-Lift FPV Drone Aerials' },
+  { id: 'livestream', name: '4K Multi-Platform Live Broadcast Feed' },
+  { id: 'album', name: 'Italian Handcrafted Leather Album (50 Pgs)' },
+  { id: 'sameday', name: '24-Hour Express Social Media Teaser' },
+  { id: 'raw', name: 'Full Uncompressed RAW Masters Drive' }
 ];
 
 export default function BookingPage() {
@@ -35,12 +35,6 @@ export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const currentPackage = PACKAGES_PRICING[formData.serviceIndex];
-  const addonsCost = formData.selectedAddons.reduce((sum, addonId) => {
-    const found = ADDONS_LIST.find(a => a.id === addonId);
-    return sum + (found ? found.price : 0);
-  }, 0);
-
-  const totalEstimate = currentPackage.basePrice + addonsCost;
 
   const toggleAddon = (id) => {
     setFormData(prev => {
@@ -62,26 +56,22 @@ export default function BookingPage() {
     setSubmitted(true);
   };
 
-  const formatINR = (val) => {
-    return '₹' + val.toLocaleString('en-IN');
-  };
-
   const whatsappMessage = encodeURIComponent(
-    `Hello Pictura Team! I would like to book a shoot reservation for ${formData.name || 'Client'}.\n\nDate: ${formData.date}\nService: ${currentPackage.name}\nEstimated Budget: ${formatINR(totalEstimate)}\nNotes: ${formData.notes || 'None'}`
+    `Hello Pictura Team! I would like to book a shoot reservation for ${formData.name || 'Client'}.\n\nDate: ${formData.date}\nService: ${currentPackage.name}\nNotes: ${formData.notes || 'None'}`
   );
 
   return (
     <div className="page-container page-fade-in">
       <div className="page-header">
         <div className="hero-badge">
-          <Calculator size={14} />
-          <span>REAL-TIME ESTIMATOR & RESERVATION</span>
+          <Sparkles size={14} />
+          <span>RESERVATION & BOOKING</span>
         </div>
         <h1 className="page-title">
-          CALCULATE & <span className="text-gradient">BOOK SHOOT</span>
+          RESERVE & <span className="text-gradient">BOOK SHOOT</span>
         </h1>
         <p className="page-subtitle">
-          Select your event shoot date, tailor your camera add-ons, and calculate your real-time budget estimate.
+          Select your event shoot date, tailor your camera add-ons, and submit your reservation request.
         </p>
       </div>
 
@@ -149,7 +139,7 @@ export default function BookingPage() {
                       className={`select-chip ${formData.serviceIndex === idx ? 'select-chip--active' : ''}`}
                       onClick={() => setFormData(prev => ({ ...prev, serviceIndex: idx }))}
                     >
-                      {pkg.name} ({formatINR(pkg.basePrice)})
+                      {pkg.name}
                     </button>
                   ))}
                 </div>
@@ -172,7 +162,6 @@ export default function BookingPage() {
                         </div>
                         <div className="addon-info">
                           <span className="addon-title">{addon.name}</span>
-                          <span className="addon-price">+{formatINR(addon.price)}</span>
                         </div>
                       </div>
                     );
@@ -212,18 +201,8 @@ export default function BookingPage() {
                   <span className="val">{currentPackage.name}</span>
                 </div>
                 <div className="summary-item">
-                  <span className="label">Base Package:</span>
-                  <span className="val">{formatINR(currentPackage.basePrice)}</span>
-                </div>
-                <div className="summary-item">
-                  <span className="label">Add-ons ({formData.selectedAddons.length}):</span>
-                  <span className="val">{formatINR(addonsCost)}</span>
-                </div>
-
-                <div className="summary-total-banner margin-top-20">
-                  <span className="total-label">TOTAL ESTIMATED BUDGET</span>
-                  <div className="total-amount text-orange">{formatINR(totalEstimate)}</div>
-                  <span className="total-tax">Approx. ${(totalEstimate / 82).toFixed(0)} USD</span>
+                  <span className="label">Selected Add-ons:</span>
+                  <span className="val">{formData.selectedAddons.length} Selected</span>
                 </div>
               </div>
 
@@ -255,9 +234,6 @@ export default function BookingPage() {
           <p>
             Thank you, <strong>{formData.name}</strong>. Your shoot reservation for <strong>{currentPackage.name}</strong> on <strong>{formData.date}</strong> has been received.
           </p>
-          <div className="estimated-recap-box margin-top-20">
-            <span>Calculated Investment Estimate: <strong>{formatINR(totalEstimate)}</strong></span>
-          </div>
           <p className="sub-text margin-top-16">
             A formal contract schedule has been sent to <u>{formData.email}</u>.
           </p>

@@ -9,8 +9,6 @@ const BESPOKE_PACKAGES = [
     category: 'Royal Wedding & Reception',
     title: 'The Sovereign Heritage Wedding',
     subtitle: 'Comprehensive 3-day royal wedding, sangeet, & reception coverage',
-    price: '₹4,50,000',
-    currency: 'INR / $5,500 AUD',
     duration: 'Multi-Day (Up to 3 Days)',
     deliverables: '800+ Master Retouched Photos + 4K Feature Film',
     availability: '2 Dates Remaining for Season',
@@ -29,8 +27,6 @@ const BESPOKE_PACKAGES = [
     category: 'Pre-Wedding & Romance Film',
     title: 'Cinematic Pre-Wedding Luxe',
     subtitle: 'Destination romantic concept shoot in Munnar, Kumarakom, or Bali',
-    price: '₹1,75,000',
-    currency: 'INR / $2,200 AUD',
     duration: '2 Full Shooting Days',
     deliverables: '150+ Retouched Stills + 3-Min Cinema Teaser',
     availability: 'Available Next Month',
@@ -48,8 +44,6 @@ const BESPOKE_PACKAGES = [
     category: 'Commercial & Fashion Campaign',
     title: 'Brand Visionary Campaign',
     subtitle: 'High-end product launch, runway, & brand advertising imagery',
-    price: '₹2,85,000',
-    currency: 'INR / $3,400 AUD',
     duration: 'Full Day Studio / Location Shoot',
     deliverables: '60 Master Commercial Retouched Assets',
     availability: 'Studio Hire Included',
@@ -67,8 +61,6 @@ const BESPOKE_PACKAGES = [
     category: '4K Live Stream & Stage',
     title: '4K Multi-Cam Broadcast',
     subtitle: 'Ultra-low latency live streaming for global stage galas & events',
-    price: '₹2,20,000',
-    currency: 'INR / $2,700 AUD',
     duration: 'Up to 8 Hours Live Broadcast',
     deliverables: 'Real-Time 4K Broadcast Stream + Stills',
     availability: 'Streaming Engineers Ready',
@@ -86,8 +78,6 @@ const BESPOKE_PACKAGES = [
     category: 'Architectural & Drone',
     title: 'Luxury Property & Estate Showcase',
     subtitle: '8K aerial drone cinematography & architectural dusk stills',
-    price: '₹1,45,000',
-    currency: 'INR / $1,800 AUD',
     duration: 'Twilight & Dawn Shoot',
     deliverables: '40 Architectural Stills + 4K Drone Reel',
     availability: 'Weather Dependent',
@@ -156,11 +146,6 @@ export default function PackagesPage({ onNavigate }) {
             <h3 className="pkg-title">{pkg.title}</h3>
             <p className="pkg-subtitle">{pkg.subtitle}</p>
 
-            <div className="pkg-price-banner">
-              <div className="pkg-price">{pkg.price}</div>
-              <div className="pkg-tax">{pkg.currency} + GST</div>
-            </div>
-
             <div className="pkg-meta-strip">
               <div><strong>Duration:</strong> {pkg.duration}</div>
               <div><strong>Deliverables:</strong> {pkg.deliverables}</div>
@@ -205,7 +190,6 @@ export default function PackagesPage({ onNavigate }) {
             <div className="modal-header">
               <span className="pkg-cat-tag">{selectedPackage.category}</span>
               <h2>{selectedPackage.title}</h2>
-              <div className="modal-price">{selectedPackage.price} {selectedPackage.currency}</div>
             </div>
 
             <div className="modal-body">

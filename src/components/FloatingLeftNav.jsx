@@ -54,7 +54,7 @@ export default function FloatingLeftNav({ activePageIndex, onPageChange }) {
             </a>
 
             <button className="header-book-btn" onClick={() => onPageChange(5)}>
-              <span>CALCULATE ESTIMATE</span>
+              <span>BOOK SESSION</span>
             </button>
 
             {isMobile && (

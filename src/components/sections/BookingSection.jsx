@@ -59,7 +59,6 @@ Add-ons: ${customPackageSummary.addOns}`;
       photoCount: customPackageSummary?.photoDeliverables || '60 Retouched Photos',
       highlightFormat: customPackageSummary?.videoEdits || 'Horizontal (16:9 Cinema)',
       addons: customPackageSummary?.addOns ? [customPackageSummary.addOns] : [],
-      totalPrice: customPackageSummary?.tier === 'Diamond' ? '$3,200 AUD' : '$1,850 AUD',
       notes: formData.message
     };
 

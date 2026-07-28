@@ -43,10 +43,8 @@ export default function ReceiptModal({ bookingData, onClose }) {
 • *Crew:* ${crewText}
 • *Retouched Photos:* ${photoCount}
 • *Highlight Reel:* ${highlightFormat}
-${addons.length > 0 ? `• *Add-ons:* ${addons.join(', ')}\n` : ''}
-💰 *TOTAL ESTIMATE:* ${totalPrice}
-────────────────────────
-*Status:* CONFIRMED & PENDING DEPOSIT
+${addons.length > 0 ? `• *Add-ons:* ${addons.join(', ')}\n` : ''}────────────────────────
+*Status:* CONFIRMED BOOKING
 Thank you for choosing Pictura Creations! We look forward to capturing your visual story.`;
 
     const encoded = encodeURIComponent(text);
@@ -149,15 +147,6 @@ Thank you for choosing Pictura Creations! We look forward to capturing your visu
             <p className="receipt-notes-text">{notes}</p>
           </div>
         )}
-
-        {/* Price Total */}
-        <div className="receipt-total-bar">
-          <div className="total-label-box">
-            <Sparkles size={16} className="text-orange" />
-            <span>ESTIMATED TOTAL AMOUNT</span>
-          </div>
-          <div className="total-amount-box">{totalPrice}</div>
-        </div>
 
         {/* Receipt Action Buttons */}
         <div className="receipt-actions-row">
