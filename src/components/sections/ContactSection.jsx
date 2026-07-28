@@ -25,7 +25,7 @@ export default function ContactSection() {
             <div className="c-info-item">
               <div className="c-icon-ring"><Phone size={20} className="text-orange" /></div>
               <div>
-                <h4 className="c-item-title">+61 455 974 240</h4>
+                <h4 className="c-item-title">+61 477 240 625</h4>
                 <p className="c-item-sub">Direct Line & WhatsApp</p>
               </div>
             </div>

@@ -63,7 +63,7 @@ export default function ContactPage() {
             <div className="contact-icon"><Phone size={22} className="text-orange" /></div>
             <div>
               <h3>Telephone & Direct WhatsApp</h3>
-              <p>+91 94468 02570 / +91 98470 12345</p>
+              <p>+61 477 240 625</p>
             </div>
           </LiquidGlassCard>
 

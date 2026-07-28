@@ -49,7 +49,7 @@ Add-ons: ${customPackageSummary.addOns}`;
       receiptId: `PIC-${Math.floor(100000 + Math.random() * 900000)}`,
       date: new Date().toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' }),
       clientName: formData.name || 'Valued Client',
-      clientPhone: formData.phone || '+61 455 974 240',
+      clientPhone: formData.phone || '+61 477 240 625',
       clientEmail: formData.email,
       eventDate: formData.date || 'To Be Scheduled',
       eventLocation: formData.location || 'Townsville, QLD',

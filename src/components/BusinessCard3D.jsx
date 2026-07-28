@@ -109,7 +109,7 @@ export default function BusinessCard3D() {
               </div>
               <div className="c-soc-info">
                 <span className="c-soc-label">WhatsApp & Call</span>
-                <span className="c-soc-value">+61 455 974 240</span>
+                <span className="c-soc-value">+61 477 240 625</span>
               </div>
               <ExternalLink size={13} className="c-soc-arrow" />
             </a>
