@@ -104,30 +104,43 @@ Add-ons: ${customPackageSummary.addOns}`;
       console.log('Google Sheets post error:', e);
     }
 
-    // Formatted Receipt text for WhatsApp
-    const receiptText =
-      `🧾 *PICTURA CREATIONS - OFFICIAL BOOKING RECEIPT*\n` +
+    // Build Digital Receipt URL link containing parameters for handsome web view
+    const receiptParams = new URLSearchParams();
+    receiptParams.set('receipt', receiptId);
+    receiptParams.set('issued', issuedDate);
+    receiptParams.set('name', formData.name || 'Valued Client');
+    receiptParams.set('phone', formData.phone || '');
+    receiptParams.set('email', formData.email || '');
+    receiptParams.set('date', formData.date || 'To Be Scheduled');
+    receiptParams.set('loc', formData.location || 'Townsville, QLD');
+    receiptParams.set('pkg', customPackageSummary?.tier || formData.service || 'Bespoke Package Selection');
+
+    if (formData.budget) receiptParams.set('budget', formData.budget);
+    if (customPackageSummary?.duration) receiptParams.set('dur', customPackageSummary.duration);
+    if (customPackageSummary?.crew) receiptParams.set('crew', customPackageSummary.crew);
+    if (customPackageSummary?.photoDeliverables) receiptParams.set('photos', customPackageSummary.photoDeliverables);
+    if (customPackageSummary?.videoEdits) receiptParams.set('edits', customPackageSummary.videoEdits);
+    if (customPackageSummary?.addOns) receiptParams.set('addons', customPackageSummary.addOns);
+    if (formData.message) receiptParams.set('notes', formData.message);
+
+    const digitalReceiptWebUrl = `https://pictura.au/?${receiptParams.toString()}#booking`;
+
+    // Concise, clean WhatsApp Message containing Name, Phone, Email, Event Date, Location, Package & Digital Receipt Link
+    const whatsappMessageText =
+      `📸 *PICTURA CREATIONS - BOOKING INQUIRY*\n` +
       `─────────────────────────────\n` +
-      `📋 *Receipt ID:* #${receiptId}\n` +
-      `📅 *Date Issued:* ${issuedDate}\n` +
       `👤 *Client Name:* ${formData.name || 'Valued Client'}\n` +
       `📞 *Phone Number:* ${formData.phone}\n` +
       `✉️ *Email Address:* ${formData.email}\n` +
       `📆 *Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
       `📍 *Location:* ${formData.location || 'Townsville, QLD'}\n` +
-      `📌 *Selected Package:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
+      `📌 *Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
       (formData.budget ? `💰 *Budget Preference:* ${formData.budget}\n` : '') +
-      (customPackageSummary?.duration ? `⏱️ *Duration:* ${customPackageSummary.duration}\n` : '') +
-      (customPackageSummary?.crew ? `🎥 *Crew:* ${customPackageSummary.crew}\n` : '') +
-      (customPackageSummary?.photoDeliverables ? `📸 *Photos:* ${customPackageSummary.photoDeliverables}\n` : '') +
-      (customPackageSummary?.videoEdits ? `🎞️ *Edits:* ${customPackageSummary.videoEdits}\n` : '') +
-      (customPackageSummary?.addOns ? `✨ *Add-ons:* ${customPackageSummary.addOns}\n` : '') +
-      (formData.message ? `📝 *Notes / Details:* ${formData.message}\n` : '') +
-      `─────────────────────────────\n` +
-      `✅ *Status:* CONFIRMED BOOKING REQUEST\n` +
-      `Thank you for choosing Pictura Creations! We look forward to capturing your visual story.`;
+      `\n🔗 *VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
+      `${digitalReceiptWebUrl}\n` +
+      `─────────────────────────────`;
 
-    const encoded = encodeURIComponent(receiptText);
+    const encoded = encodeURIComponent(whatsappMessageText);
     window.open(`https://wa.me/61477240625?text=${encoded}`, '_blank');
   };
 
@@ -136,29 +149,36 @@ Add-ons: ${customPackageSummary.addOns}`;
     const receiptId = receiptData.receiptId || `PIC-${Math.floor(100000 + Math.random() * 900000)}`;
     const issuedDate = receiptData.date || new Date().toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' });
 
-    const receiptText =
-      `🧾 *PICTURA CREATIONS - OFFICIAL BOOKING RECEIPT*\n` +
+    const receiptParams = new URLSearchParams();
+    receiptParams.set('receipt', receiptId);
+    receiptParams.set('issued', issuedDate);
+    receiptParams.set('name', formData.name || 'Valued Client');
+    receiptParams.set('phone', formData.phone || '');
+    receiptParams.set('email', formData.email || '');
+    receiptParams.set('date', formData.date || 'To Be Scheduled');
+    receiptParams.set('loc', formData.location || 'Townsville, QLD');
+    receiptParams.set('pkg', customPackageSummary?.tier || formData.service || 'Bespoke Package Selection');
+
+    if (formData.budget) receiptParams.set('budget', formData.budget);
+    if (formData.message) receiptParams.set('notes', formData.message);
+
+    const digitalReceiptWebUrl = `https://pictura.au/?${receiptParams.toString()}#booking`;
+
+    const whatsappMessageText =
+      `📸 *PICTURA CREATIONS - BOOKING INQUIRY*\n` +
       `─────────────────────────────\n` +
-      `📋 *Receipt ID:* #${receiptId}\n` +
-      `📅 *Date Issued:* ${issuedDate}\n` +
       `👤 *Client Name:* ${formData.name || 'Valued Client'}\n` +
       `📞 *Phone Number:* ${formData.phone}\n` +
       `✉️ *Email Address:* ${formData.email}\n` +
       `📆 *Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
       `📍 *Location:* ${formData.location || 'Townsville, QLD'}\n` +
-      `📌 *Selected Package:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
+      `📌 *Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
       (formData.budget ? `💰 *Budget Preference:* ${formData.budget}\n` : '') +
-      (customPackageSummary?.duration ? `⏱️ *Duration:* ${customPackageSummary.duration}\n` : '') +
-      (customPackageSummary?.crew ? `🎥 *Crew:* ${customPackageSummary.crew}\n` : '') +
-      (customPackageSummary?.photoDeliverables ? `📸 *Photos:* ${customPackageSummary.photoDeliverables}\n` : '') +
-      (customPackageSummary?.videoEdits ? `🎞️ *Edits:* ${customPackageSummary.videoEdits}\n` : '') +
-      (customPackageSummary?.addOns ? `✨ *Add-ons:* ${customPackageSummary.addOns}\n` : '') +
-      (formData.message ? `📝 *Notes / Details:* ${formData.message}\n` : '') +
-      `─────────────────────────────\n` +
-      `✅ *Status:* CONFIRMED BOOKING REQUEST\n` +
-      `Thank you for choosing Pictura Creations! We look forward to capturing your visual story.`;
+      `\n🔗 *VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
+      `${digitalReceiptWebUrl}\n` +
+      `─────────────────────────────`;
 
-    const encoded = encodeURIComponent(receiptText);
+    const encoded = encodeURIComponent(whatsappMessageText);
     window.open(`https://wa.me/61477240625?text=${encoded}`, '_blank');
   };
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/sections/Navbar';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
@@ -14,12 +14,44 @@ import FooterSection from './components/sections/FooterSection';
 import DissolveObserver from './components/DissolveObserver';
 import VideoModal from './components/VideoModal';
 import PackageCustomizerModal from './components/PackageCustomizerModal';
+import ReceiptModal from './components/ReceiptModal';
 
 export default function App() {
   const [activeFilmModal, setActiveFilmModal] = useState(null);
   const [activeCustomizerPackage, setActiveCustomizerPackage] = useState(null);
   const [customPackageSummary, setCustomPackageSummary] = useState(null);
   const [galleryCategory, setGalleryCategory] = useState('ALL');
+  const [sharedReceiptData, setSharedReceiptData] = useState(null);
+
+  useEffect(() => {
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      const receiptId = searchParams.get('receipt');
+
+      if (receiptId) {
+        const bookingFromUrl = {
+          receiptId: receiptId,
+          date: searchParams.get('issued') || new Date().toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' }),
+          clientName: searchParams.get('name') || 'Valued Client',
+          clientPhone: searchParams.get('phone') || '',
+          clientEmail: searchParams.get('email') || '',
+          eventDate: searchParams.get('date') || 'To Be Scheduled',
+          eventLocation: searchParams.get('loc') || 'Townsville, QLD',
+          packageTitle: searchParams.get('pkg') || 'Bespoke Package Selection',
+          duration: searchParams.get('dur') || 'Standard Session',
+          crewText: searchParams.get('crew') || '1 Photographer + 1 Cinematographer',
+          photoCount: searchParams.get('photos') || 'Retouched Photos Included',
+          highlightFormat: searchParams.get('edits') || 'Cinematic Film',
+          addons: searchParams.get('addons') ? searchParams.get('addons').split(',') : [],
+          notes: searchParams.get('notes') || ''
+        };
+
+        setSharedReceiptData(bookingFromUrl);
+      }
+    } catch (e) {
+      console.log('Receipt URL parsing error:', e);
+    }
+  }, []);
 
   const scrollToBooking = () => {
     const el = document.getElementById('booking');
@@ -139,6 +171,14 @@ export default function App() {
           packageTier={activeCustomizerPackage}
           onClose={() => setActiveCustomizerPackage(null)}
           onApplyCustomization={handleApplyCustomization}
+        />
+      )}
+
+      {/* Shared Receipt Modal from WhatsApp Link */}
+      {sharedReceiptData && (
+        <ReceiptModal
+          bookingData={sharedReceiptData}
+          onClose={() => setSharedReceiptData(null)}
         />
       )}
     </div>
