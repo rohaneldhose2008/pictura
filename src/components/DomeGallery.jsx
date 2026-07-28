@@ -72,9 +72,10 @@ function buildItems(pool, seg) {
   });
 
   return coords.map((c, i) => {
-    // Prime-scattered distribution so adjacent horizontal, vertical, and diagonal tiles are randomly misplaced
-    const primeIndex = (i * 7 + Math.abs(c.x * 13 + c.y * 19)) % normalizedImages.length;
-    const item = normalizedImages[primeIndex];
+    // 2D Spatial GLSL Pseudo-Random Noise Hash for 100% non-periodic tile distribution
+    const rawHash = Math.sin(c.x * 12.9898 + c.y * 78.233 + (c.x * c.y * 0.013)) * 43758.5453;
+    const hashIndex = Math.floor(Math.abs(rawHash)) % normalizedImages.length;
+    const item = normalizedImages[hashIndex];
     return {
       ...c,
       src: item.src,
