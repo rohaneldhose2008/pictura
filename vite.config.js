@@ -6,10 +6,18 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   assetsInclude: ['**/*.glb'],
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]'
+      }
+    }
+  },
   server: {
     port: 3000,
     strictPort: true,
     host: true
   }
 })
-
