@@ -104,15 +104,6 @@ Add-ons: ${customPackageSummary.addOns}`;
           </h2>
 
           <div className="booking-feature-cards">
-            <div className="b-feat-card">
-              <div className="b-feat-icon">
-                <Clock size={20} className="text-orange" />
-              </div>
-              <div>
-                <h4 className="b-feat-title">Instant Notification</h4>
-                <p className="b-feat-desc">Submissions trigger instant email & WhatsApp alerts</p>
-              </div>
-            </div>
 
             <div className="b-feat-card">
               <div className="b-feat-icon">
