@@ -125,18 +125,18 @@ Add-ons: ${customPackageSummary.addOns}`;
 
     const digitalReceiptWebUrl = `https://pictura.au/?${receiptParams.toString()}#booking`;
 
-    // Concise, clean WhatsApp Message containing Name, Phone, Email, Event Date, Location, Package & Digital Receipt Link
+    // Concise, clean WhatsApp Message containing Name, Phone, Email, Event Date, Location, Package & Digital Receipt Link (No Emojis)
     const whatsappMessageText =
-      `📸 *PICTURA CREATIONS - BOOKING INQUIRY*\n` +
+      `*PICTURA CREATIONS - BOOKING INQUIRY*\n` +
       `─────────────────────────────\n` +
-      `👤 *Client Name:* ${formData.name || 'Valued Client'}\n` +
-      `📞 *Phone Number:* ${formData.phone}\n` +
-      `✉️ *Email Address:* ${formData.email}\n` +
-      `📆 *Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
-      `📍 *Location:* ${formData.location || 'Townsville, QLD'}\n` +
-      `📌 *Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
-      (formData.budget ? `💰 *Budget Preference:* ${formData.budget}\n` : '') +
-      `\n🔗 *VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
+      `*Client Name:* ${formData.name || 'Valued Client'}\n` +
+      `*Phone Number:* ${formData.phone}\n` +
+      `*Email Address:* ${formData.email}\n` +
+      `*Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
+      `*Location:* ${formData.location || 'Townsville, QLD'}\n` +
+      `*Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
+      (formData.budget ? `*Budget Preference:* ${formData.budget}\n` : '') +
+      `\n*VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
       `${digitalReceiptWebUrl}\n` +
       `─────────────────────────────`;
 
@@ -165,16 +165,16 @@ Add-ons: ${customPackageSummary.addOns}`;
     const digitalReceiptWebUrl = `https://pictura.au/?${receiptParams.toString()}#booking`;
 
     const whatsappMessageText =
-      `📸 *PICTURA CREATIONS - BOOKING INQUIRY*\n` +
+      `*PICTURA CREATIONS - BOOKING INQUIRY*\n` +
       `─────────────────────────────\n` +
-      `👤 *Client Name:* ${formData.name || 'Valued Client'}\n` +
-      `📞 *Phone Number:* ${formData.phone}\n` +
-      `✉️ *Email Address:* ${formData.email}\n` +
-      `📆 *Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
-      `📍 *Location:* ${formData.location || 'Townsville, QLD'}\n` +
-      `📌 *Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
-      (formData.budget ? `💰 *Budget Preference:* ${formData.budget}\n` : '') +
-      `\n🔗 *VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
+      `*Client Name:* ${formData.name || 'Valued Client'}\n` +
+      `*Phone Number:* ${formData.phone}\n` +
+      `*Email Address:* ${formData.email}\n` +
+      `*Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
+      `*Location:* ${formData.location || 'Townsville, QLD'}\n` +
+      `*Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
+      (formData.budget ? `*Budget Preference:* ${formData.budget}\n` : '') +
+      `\n*VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
       `${digitalReceiptWebUrl}\n` +
       `─────────────────────────────`;
 
