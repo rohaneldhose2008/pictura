@@ -4,11 +4,10 @@ import './PackageCustomizerModal.css';
 
 const ALL_SERVICES_LIST = [
   'Photography',
-  'Videography',
+  'Cinematography',
   'Drone Cinema',
   'Corporate',
   'Advertising',
-  'Short Film',
   'Functions',
   'Events',
   'Live Broadcast',
@@ -24,7 +23,7 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
   // Selected Services (Default based on tier)
   const [selectedServices, setSelectedServices] = useState([
     'Photography',
-    ...(isStarter ? [] : ['Videography']),
+    ...(isStarter ? [] : ['Cinematography']),
     ...(isDiamond ? ['Drone Cinema'] : [])
   ]);
 
@@ -183,7 +182,7 @@ export default function PackageCustomizerModal({ packageTier, onClose, onApplyCu
                 <div className="crew-info">
                   <Video size={18} className="text-orange" />
                   <div>
-                    <span className="crew-title">Videographers</span>
+                    <span className="crew-title">Cinematographers</span>
                     <span className="crew-sub">4K Cinema video coverage</span>
                   </div>
                 </div>

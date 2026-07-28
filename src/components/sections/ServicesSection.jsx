@@ -3,7 +3,7 @@ import './ServicesSection.css';
 
 const FLYING_SERVICES = [
   { image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop', text: 'PHOTOGRAPHY' },
-  { image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop', text: 'VIDEOGRAPHY' },
+  { image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop', text: 'CINEMATOGRAPHY' },
   { image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1200&auto=format&fit=crop', text: 'DRONE CINEMA' },
   { image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop', text: 'CORPORATE' },
   { image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop', text: 'ADVERTISING' },

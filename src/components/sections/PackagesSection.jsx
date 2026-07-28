@@ -26,7 +26,7 @@ const PACKAGES_DATA = [
     icon: Video,
     features: [
       '4-6 Hours Coverage',
-      '1 Photographer, 1 Videographer',
+      '1 Photographer, 1 Cinematographer',
       '60 Retouched High-Res Photos',
       '3-5 Min Highlight Video (Vertical or Horizontal)',
       'Digital Copy Included'
@@ -43,7 +43,7 @@ const PACKAGES_DATA = [
     icon: Crown,
     features: [
       '8-10 Hours Coverage',
-      '2 Photographers, 1 Videographer + Drone',
+      '2 Photographers, 1 Cinematographer + Drone',
       '200 Retouched High-Res Photos',
       'Highlight Video x 2',
       'Custom USB Drive Included',

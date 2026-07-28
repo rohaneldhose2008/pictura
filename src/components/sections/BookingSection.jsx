@@ -191,7 +191,7 @@ Add-ons: ${customPackageSummary.addOns}`;
                     <label>Service Category</label>
                     <select name="service" value={formData.service} onChange={handleChange}>
                       <option value="Photography">Event Photography</option>
-                      <option value="Videography">Videography & Cinema</option>
+                      <option value="Cinematography">Cinematography</option>
                       <option value="Drone">Drone Aerial Shoot</option>
                       <option value="Live Stream">Live Streaming Broadcast</option>
                       <option value="Corporate">Corporate Package</option>

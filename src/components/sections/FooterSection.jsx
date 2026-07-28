@@ -58,7 +58,7 @@ export default function FooterSection() {
             <h4 className="footer-col-title">OUR SERVICES</h4>
             <ul className="footer-links-list">
               <li><button onClick={() => scrollToSection('services')}>Photography</button></li>
-              <li><button onClick={() => scrollToSection('services')}>Videography</button></li>
+              <li><button onClick={() => scrollToSection('services')}>Cinematography</button></li>
               <li><button onClick={() => scrollToSection('services')}>Live Streaming</button></li>
               <li><button onClick={() => scrollToSection('services')}>Drone Services</button></li>
               <li><button onClick={() => scrollToSection('services')}>Event Management</button></li>
