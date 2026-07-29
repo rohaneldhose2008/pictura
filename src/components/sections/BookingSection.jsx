@@ -14,7 +14,6 @@ export default function BookingSection({ customPackageSummary }) {
     phone: '',
     service: '',
     date: '',
-    budget: '',
     location: 'Townsville, QLD',
     message: ''
   });
@@ -93,7 +92,6 @@ Add-ons: ${customPackageSummary.addOns}`;
           phone: formData.phone || '',
           email: formData.email || '',
           date: formData.date || '',
-          budget: formData.budget || '',
           location: formData.location || '',
           service: customPackageSummary?.tier || formData.service || 'Bespoke Selection',
           message: formData.message || ''
@@ -114,7 +112,6 @@ Add-ons: ${customPackageSummary.addOns}`;
     receiptParams.set('loc', formData.location || 'Townsville, QLD');
     receiptParams.set('pkg', customPackageSummary?.tier || formData.service || 'Bespoke Package Selection');
 
-    if (formData.budget) receiptParams.set('budget', formData.budget);
     if (customPackageSummary?.duration) receiptParams.set('dur', customPackageSummary.duration);
     if (customPackageSummary?.crew) receiptParams.set('crew', customPackageSummary.crew);
     if (customPackageSummary?.photoDeliverables) receiptParams.set('photos', customPackageSummary.photoDeliverables);
@@ -134,7 +131,6 @@ Add-ons: ${customPackageSummary.addOns}`;
       `*Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
       `*Location:* ${formData.location || 'Townsville, QLD'}\n` +
       `*Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
-      (formData.budget ? `*Budget Preference:* ${formData.budget}\n` : '') +
       `\n*VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
       `${digitalReceiptWebUrl}\n` +
       `─────────────────────────────`;
@@ -158,7 +154,6 @@ Add-ons: ${customPackageSummary.addOns}`;
     receiptParams.set('loc', formData.location || 'Townsville, QLD');
     receiptParams.set('pkg', customPackageSummary?.tier || formData.service || 'Bespoke Package Selection');
 
-    if (formData.budget) receiptParams.set('budget', formData.budget);
     if (formData.message) receiptParams.set('notes', formData.message);
 
     const digitalReceiptWebUrl = `https://pictura.au/?${receiptParams.toString()}#booking`;
@@ -172,7 +167,6 @@ Add-ons: ${customPackageSummary.addOns}`;
       `*Event Date:* ${formData.date || 'To Be Scheduled'}\n` +
       `*Location:* ${formData.location || 'Townsville, QLD'}\n` +
       `*Selected Service:* ${customPackageSummary?.tier || formData.service || 'Bespoke Package Selection'}\n` +
-      (formData.budget ? `*Budget Preference:* ${formData.budget}\n` : '') +
       `\n*VIEW OFFICIAL DIGITAL RECEIPT & SPECIFICATIONS:*\n` +
       `${digitalReceiptWebUrl}\n` +
       `─────────────────────────────`;
@@ -325,27 +319,15 @@ Add-ons: ${customPackageSummary.addOns}`;
                     />
                   </div>
                   <div className="input-group">
-                    <label>Select Your Budget (Optional)</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange}>
-                      <option value="">-- Choose Budget Range (Optional) --</option>
-                      <option value="Under $1,500 AUD">Under $1,500 AUD</option>
-                      <option value="$1,500 - $3,000 AUD">$1,500 - $3,000 AUD</option>
-                      <option value="$3,000 - $5,000 AUD">$3,000 - $5,000 AUD</option>
-                      <option value="$5,000+ AUD">$5,000+ AUD</option>
-                      <option value="Flexible / To Be Discussed">Flexible / To Be Discussed</option>
-                    </select>
+                    <label>Location / City</label>
+                    <input
+                      type="text"
+                      name="location"
+                      placeholder="Townsville, QLD"
+                      value={formData.location}
+                      onChange={handleChange}
+                    />
                   </div>
-                </div>
-
-                <div className="input-group">
-                  <label>Location / City</label>
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="Townsville, QLD"
-                    value={formData.location}
-                    onChange={handleChange}
-                  />
                 </div>
 
                 <div className="input-group">
