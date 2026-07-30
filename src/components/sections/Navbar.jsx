@@ -32,7 +32,7 @@ export default function Navbar() {
           className="capsule-logo-icon-btn"
           aria-label="Pictura Creations Home"
         >
-          <PicturaLogo variant="horizontal" height={42} />
+          <PicturaLogo variant="horizontal" height={46} />
         </button>
 
         {/* Center: Nav Links */}

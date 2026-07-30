@@ -33,7 +33,7 @@ export default function FooterSection() {
           {/* Col 1: Brand Info with Official Full Logo */}
           <div className="footer-brand-col">
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="footer-logo-link">
-              <PicturaLogo variant="horizontal" height={42} />
+              <PicturaLogo variant="horizontal" height={46} />
             </a>
 
             <p className="footer-tagline">
