@@ -75,17 +75,31 @@ export default function GoogleReviewsSection() {
   const [activeTab, setActiveTab] = useState('ALL');
 
   useEffect(() => {
-    // Load Elfsight script dynamically if available
-    const script = document.createElement('script');
-    script.src = 'https://elfsightcdn.com/platform.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+    const loadElfsight = () => {
+      if (window.ElfsightApp && typeof window.ElfsightApp.init === 'function') {
+        try {
+          window.ElfsightApp.init();
+        } catch (e) {
+          console.log('Elfsight init:', e);
+        }
+      } else {
+        const script = document.createElement('script');
+        script.src = 'https://static.elfsight.com/platform/platform.js';
+        script.async = true;
+        script.onload = () => {
+          if (window.ElfsightApp && typeof window.ElfsightApp.init === 'function') {
+            try {
+              window.ElfsightApp.init();
+            } catch (e) {
+              console.log('Elfsight init after load:', e);
+            }
+          }
+        };
+        document.body.appendChild(script);
       }
     };
+
+    loadElfsight();
   }, []);
 
   const filteredReviews = activeTab === 'ALL'
