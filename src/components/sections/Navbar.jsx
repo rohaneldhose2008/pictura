@@ -42,6 +42,7 @@ export default function Navbar() {
           <button onClick={() => scrollToSection('services')} className="capsule-link-btn">SERVICES</button>
           <button onClick={() => scrollToSection('gallery')} className="capsule-link-btn">GALLERY</button>
           <button onClick={() => scrollToSection('packages')} className="capsule-link-btn">PACKAGES</button>
+          <button onClick={() => scrollToSection('reviews')} className="capsule-link-btn">REVIEWS</button>
           <button onClick={() => scrollToSection('contact')} className="capsule-link-btn">CONTACT</button>
         </nav>
 
