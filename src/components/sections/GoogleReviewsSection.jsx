@@ -104,6 +104,11 @@ export default function GoogleReviewsSection() {
         </p>
       </div>
 
+      {/* Primary Live Elfsight Google Reviews Widget */}
+      <div className="elfsight-widget-wrapper" style={{ margin: '0 auto 36px auto', maxWidth: '1100px', width: '100%' }}>
+        <div className="elfsight-app-2f05f024-4a71-4dc8-ab33-cc995e829437"></div>
+      </div>
+
       {/* Google Rating Banner Stamp */}
       <div className="google-rating-banner">
         <div className="google-g-badge">
